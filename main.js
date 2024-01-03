@@ -1,17 +1,13 @@
 import { big_bang, to_draw, text, rkt_list} from "./js-build/modules/universe.rkt.js";
 
-console.log(rkt_list)
+console.log(text)
 
 const init = () => {
 
 }
 
-const handleNew = () => {
-
-}
-
-const handleDraw = to_draw(() => {
-
+const handleDraw = to_draw(()=>{
+  return text("hello world", 100, "black");
 });
 
 

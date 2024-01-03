@@ -5,11 +5,11 @@ var document = window.document;
 var console = window.console;
 var Math = window.Math;
 var Path2D = window.Path2D;
-var abs_plus_ceil = function(n2702) {
+var abs_plus_ceil = function(n1608) {
     if (arguments.length !== 1) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    return M0.abs(M0.ceiling(n2702));
+    return M0.abs(M0.ceiling(n1608));
 };
 var __rjs_quoted__ = {};
 export {

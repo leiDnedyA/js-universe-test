@@ -1,7 +1,7 @@
 import * as $rjs_core from '../../../../runtime/core.js';
 import * as M0 from "../../../../runtime/kernel.rkt.js";
-var ___js_ffi = $rjs_core.attachProcedureArity(function(..._27011460) {
-    var _2701 = $rjs_core.Pair.listFromArray(_27011460);
+var ___js_ffi = $rjs_core.attachProcedureArity(function(..._1607613) {
+    var _1607 = $rjs_core.Pair.listFromArray(_1607613);
     return M0.error($rjs_core.PrimitiveSymbol.make("racketscript"), $rjs_core.UString.make("can't make JS ffi calls in Racket"));
 });
 var __rjs_quoted__ = {};

@@ -3,33 +3,33 @@ import * as M0 from "../../../runtime/kernel.rkt.js";
 import * as M1 from "../../../runtime/core.rkt.js";
 M1.__rjs_quoted__.___declare;
 $rjs_core.Keyword.make("cross-phase-persistent");
-var reverse = function(l1073) {
+var reverse = function(l3331) {
     if (arguments.length !== 1) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
     if (M0.variable_reference_from_unsafe_p($rjs_core.PrimitiveSymbol.make("#%variable-reference")) !== false) {
-        var if_res483 = M0.rvoid();
+        var if_res1802 = M0.rvoid();
     } else {
-        if (M0.list_p(l1073) !== false) {
-            var if_res482 = M0.rvoid();
+        if (M0.list_p(l3331) !== false) {
+            var if_res1801 = M0.rvoid();
         } else {
-            var if_res482 = M0.raise_argument_error($rjs_core.PrimitiveSymbol.make("reverse"), $rjs_core.UString.make("list?"), l1073);
+            var if_res1801 = M0.raise_argument_error($rjs_core.PrimitiveSymbol.make("reverse"), $rjs_core.UString.make("list?"), l3331);
         }
-        var if_res483 = if_res482;
+        var if_res1802 = if_res1801;
     }
-    if_res483;
-    var loop1074 = function(a1075, l1076) {
+    if_res1802;
+    var loop3332 = function(a3333, l3334) {
         if (arguments.length !== 2) {
             throw $rjs_core.racketContractError("arity mismatch");
         } else {}
-        if (M0.null_p(l1076) !== false) {
-            var if_res484 = a1075;
+        if (M0.null_p(l3334) !== false) {
+            var if_res1803 = a3333;
         } else {
-            var if_res484 = loop1074(M0.cons(M0.car(l1076), a1075), M0.cdr(l1076));
+            var if_res1803 = loop3332(M0.cons(M0.car(l3334), a3333), M0.cdr(l3334));
         }
-        return if_res484;
+        return if_res1803;
     };
-    return loop1074(M0.rnull, l1073);
+    return loop3332(M0.rnull, l3331);
 };
 var __rjs_quoted__ = {};
 export {

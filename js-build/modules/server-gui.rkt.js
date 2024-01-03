@@ -6,181 +6,181 @@ import * as M3 from "../links/racketscript-compiler/racketscript/private/interop
 var DEFAULT_DISPLAY_MODE = "block";
 var WIDTH = 500;
 var HEIGHT = 300;
-var ServerLogger = function(root2735, stop_callback2736, restart_callback2737) {
+var ServerLogger = function(root3294, stop_callback3295, restart_callback3296) {
     if (arguments.length !== 3) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    var this2738 = this;
-    this2738.logs = [];
-    this2738.autoscroll_p = true;
-    this2738.container = document.createElement("div");
-    this2738.textbox = document.createElement("textarea");
-    this2738.checkbox_div = document.createElement("div");
-    this2738.checkbox_label = document.createElement("label");
-    this2738.checkbox = document.createElement("input");
-    this2738.button_div = document.createElement("div");
-    this2738.stop_button = document.createElement("button");
-    this2738.restart_button = document.createElement("button");
-    this2738.container.style.display = "none";
-    this2738.container.style.width = M1.js_string(M0.format($rjs_core.UString.make("~apx"), WIDTH));
-    this2738.container.style.height = M1.js_string(M0.format($rjs_core.UString.make("~apx"), HEIGHT));
-    this2738.textbox.style.width = "inherit";
-    this2738.textbox.style.height = "inherit";
-    this2738.checkbox_label.for = "autoscroll";
-    this2738.checkbox_label.innerHTML = "autoscroll with new input";
-    this2738.checkbox.type = "checkbox";
-    this2738.checkbox.onclick = function() {
+    var this3297 = this;
+    this3297.logs = [];
+    this3297.autoscroll_p = true;
+    this3297.container = document.createElement("div");
+    this3297.textbox = document.createElement("textarea");
+    this3297.checkbox_div = document.createElement("div");
+    this3297.checkbox_label = document.createElement("label");
+    this3297.checkbox = document.createElement("input");
+    this3297.button_div = document.createElement("div");
+    this3297.stop_button = document.createElement("button");
+    this3297.restart_button = document.createElement("button");
+    this3297.container.style.display = "none";
+    this3297.container.style.width = M1.js_string(M0.format($rjs_core.UString.make("~apx"), WIDTH));
+    this3297.container.style.height = M1.js_string(M0.format($rjs_core.UString.make("~apx"), HEIGHT));
+    this3297.textbox.style.width = "inherit";
+    this3297.textbox.style.height = "inherit";
+    this3297.checkbox_label.for = "autoscroll";
+    this3297.checkbox_label.innerHTML = "autoscroll with new input";
+    this3297.checkbox.type = "checkbox";
+    this3297.checkbox.onclick = function() {
         if (arguments.length !== 0) {
             throw $rjs_core.racketContractError("arity mismatch");
         } else {}
-        this2738.autoscroll_p = this2738.checkbox.checked;
+        this3297.autoscroll_p = this3297.checkbox.checked;
         return null;
     };
-    this2738.checkbox.checked = true;
-    this2738.stop_button.innerHTML = "stop";
-    this2738.stop_button.style.grid_area = "stop";
-    this2738.stop_button.onclick = stop_callback2736;
-    this2738.restart_button.innerHTML = "restart";
-    this2738.restart_button.style.grid_area = "restart";
-    this2738.restart_button.onclick = restart_callback2737;
-    this2738.button_div.style.width = "100%";
-    this2738.button_div.style.display = "grid";
-    this2738.button_div.style.gridTemplateAreas = "'stop restart'";
-    this2738.checkbox_div.appendChild(this2738.checkbox_label);
-    this2738.checkbox_div.appendChild(this2738.checkbox);
-    this2738.button_div.appendChild(this2738.stop_button);
-    this2738.button_div.appendChild(this2738.restart_button);
-    this2738.container.appendChild(this2738.textbox);
-    this2738.container.appendChild(this2738.checkbox_div);
-    if (restart_callback2737 !== false) {
-        var if_res1487 = stop_callback2736;
+    this3297.checkbox.checked = true;
+    this3297.stop_button.innerHTML = "stop";
+    this3297.stop_button.style.grid_area = "stop";
+    this3297.stop_button.onclick = stop_callback3295;
+    this3297.restart_button.innerHTML = "restart";
+    this3297.restart_button.style.grid_area = "restart";
+    this3297.restart_button.onclick = restart_callback3296;
+    this3297.button_div.style.width = "100%";
+    this3297.button_div.style.display = "grid";
+    this3297.button_div.style.gridTemplateAreas = "'stop restart'";
+    this3297.checkbox_div.appendChild(this3297.checkbox_label);
+    this3297.checkbox_div.appendChild(this3297.checkbox);
+    this3297.button_div.appendChild(this3297.stop_button);
+    this3297.button_div.appendChild(this3297.restart_button);
+    this3297.container.appendChild(this3297.textbox);
+    this3297.container.appendChild(this3297.checkbox_div);
+    if (restart_callback3296 !== false) {
+        var if_res1782 = stop_callback3295;
     } else {
-        var if_res1487 = false;
+        var if_res1782 = false;
     }
-    if (if_res1487 !== false) {
-        var if_res1488 = this2738.container.appendChild(this2738.button_div);
+    if (if_res1782 !== false) {
+        var if_res1783 = this3297.container.appendChild(this3297.button_div);
     } else {
-        var if_res1488 = M0.rvoid();
+        var if_res1783 = M0.rvoid();
     }
-    if_res1488;
-    root2735.appendChild(this2738.container);
-    return this2738;
+    if_res1783;
+    root3294.appendChild(this3297.container);
+    return this3297;
 };
-ServerLogger.prototype.log = function(text2739) {
+ServerLogger.prototype.log = function(text3298) {
     if (arguments.length !== 1) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    var this2740 = this;
-    this2740.logs.push(M1.js_string(text2739));
-    this2740.render();
-    console.log(M1.js_string(text2739));
+    var this3299 = this;
+    this3299.logs.push(M1.js_string(text3298));
+    this3299.render();
+    console.log(M1.js_string(text3298));
     return M0.rvoid();
 };
 ServerLogger.prototype.show = function() {
     if (arguments.length !== 0) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    var this2741 = this;
-    this2741.container.style.display = DEFAULT_DISPLAY_MODE;
+    var this3300 = this;
+    this3300.container.style.display = DEFAULT_DISPLAY_MODE;
     return M0.rvoid();
 };
 ServerLogger.prototype.hide = function() {
     if (arguments.length !== 0) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    var this2742 = this;
-    this2742.container.style.display = "none";
+    var this3301 = this;
+    this3301.container.style.display = "none";
     return M0.rvoid();
 };
 ServerLogger.prototype.render = function() {
     if (arguments.length !== 0) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    var this2743 = this;
-    var log_string2744 = this2743.logs.reduce(function(res2745, curr2746) {
+    var this3302 = this;
+    var log_string3303 = this3302.logs.reduce(function(res3304, curr3305) {
         if (arguments.length !== 2) {
             throw $rjs_core.racketContractError("arity mismatch");
         } else {}
-        if ((res2745 === "") !== false) {
-            var if_res1489 = M1.js_string(curr2746);
+        if ((res3304 === "") !== false) {
+            var if_res1784 = M1.js_string(curr3305);
         } else {
-            var if_res1489 = res2745 + ("\n\n" + M1.js_string(curr2746));
+            var if_res1784 = res3304 + ("\n\n" + M1.js_string(curr3305));
         }
-        return if_res1489;
+        return if_res1784;
     }, "");
-    this2743.textbox.innerHTML = log_string2744;
-    if (M0.equal_p(this2743.autoscroll_p, true) !== false) {
-        this2743.textbox.scrollTop = this2743.textbox.scrollHeight;
-        var if_res1490 = null;
+    this3302.textbox.innerHTML = log_string3303;
+    if (M0.equal_p(this3302.autoscroll_p, true) !== false) {
+        this3302.textbox.scrollTop = this3302.textbox.scrollHeight;
+        var if_res1785 = null;
     } else {
-        var if_res1490 = M0.rvoid();
+        var if_res1785 = M0.rvoid();
     }
-    if_res1490;
+    if_res1785;
     return M0.rvoid();
 };
-var make_gui = function(root2747, stop_callback2748, restart_callback2749) {
+var make_gui = function(root3306, stop_callback3307, restart_callback3308) {
     if (arguments.length !== 3) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    return new ServerLogger(root2747, stop_callback2748, restart_callback2749);
+    return new ServerLogger(root3306, stop_callback3307, restart_callback3308);
 };
-var server_gui2750 = function(root_element12751, stop_callback22752, restart_callback32753) {
+var server_gui3309 = function(root_element13310, stop_callback23311, restart_callback33312) {
     if (arguments.length !== 3) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    if (M0.eq_p(root_element12751, M2.unsafe_undefined) !== false) {
-        var if_res1491 = document.body;
+    if (M0.eq_p(root_element13310, M2.unsafe_undefined) !== false) {
+        var if_res1786 = document.body;
     } else {
-        var if_res1491 = root_element12751;
+        var if_res1786 = root_element13310;
     }
-    var root_element2754 = if_res1491;
+    var root_element3313 = if_res1786;
     if (false !== false) {
-        var if_res1492 = false;
+        var if_res1787 = false;
     } else {
-        var if_res1492 = stop_callback22752;
+        var if_res1787 = stop_callback23311;
     }
-    var stop_callback2755 = if_res1492;
+    var stop_callback3314 = if_res1787;
     if (false !== false) {
-        var if_res1493 = false;
+        var if_res1788 = false;
     } else {
-        var if_res1493 = restart_callback32753;
+        var if_res1788 = restart_callback33312;
     }
-    var restart_callback2756 = if_res1493;
-    return make_gui(root_element2754, stop_callback2755, restart_callback2756);
+    var restart_callback3315 = if_res1788;
+    return make_gui(root_element3313, stop_callback3314, restart_callback3315);
 };
-var cl1494 = function() {
+var cl1789 = function() {
     if (arguments.length !== 0) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    return server_gui2750(M2.unsafe_undefined, false, false);
+    return server_gui3309(M2.unsafe_undefined, false, false);
 };
-var cl1495 = function(root_element2757, stop_callback2758, restart_callback32759) {
+var cl1790 = function(root_element3316, stop_callback3317, restart_callback33318) {
     if (arguments.length !== 3) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    return server_gui2750(root_element2757, stop_callback2758, restart_callback32759);
+    return server_gui3309(root_element3316, stop_callback3317, restart_callback33318);
 };
-var cl1496 = function(root_element2760, stop_callback22761) {
+var cl1791 = function(root_element3319, stop_callback23320) {
     if (arguments.length !== 2) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    return server_gui2750(root_element2760, stop_callback22761, false);
+    return server_gui3309(root_element3319, stop_callback23320, false);
 };
-var cl1497 = function(root_element12762) {
+var cl1792 = function(root_element13321) {
     if (arguments.length !== 1) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    return server_gui2750(root_element12762, false, false);
+    return server_gui3309(root_element13321, false, false);
 };
 var server_gui = $rjs_core.attachProcedureArity(function() {
-    var fixed_lam1498 = {
-        '0': cl1494,
-        '3': cl1495,
-        '2': cl1496,
-        '1': cl1497
+    var fixed_lam1793 = {
+        '0': cl1789,
+        '3': cl1790,
+        '2': cl1791,
+        '1': cl1792
     } [arguments.length];
-    if (fixed_lam1498 !== undefined) {
-        return fixed_lam1498.apply(null, arguments);
+    if (fixed_lam1793 !== undefined) {
+        return fixed_lam1793.apply(null, arguments);
     } else {
         return M0.error($rjs_core.UString.make("case-lambda: invalid case"));
     }
