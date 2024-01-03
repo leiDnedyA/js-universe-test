@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+rm -rf js-build
+rm -rf ../racketscript-universe/js-build/
+
+gnome-terminal -- bash -c "cd ../racketscript-universe/; bash js_compile.sh; cp -r js-build ../js-universe-test"
+
