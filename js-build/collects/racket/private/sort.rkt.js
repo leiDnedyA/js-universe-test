@@ -1,1517 +1,1517 @@
 import * as $rjs_core from '../../../runtime/core.js';
 import * as M0 from "../../../runtime/kernel.rkt.js";
 import * as M1 from "../../../runtime/unsafe.rkt.js";
-var generic_sort2967 = function(A2968, less_than_p2969, n2970) {
+var generic_sort1997 = function(A1998, less_than_p1999, n2000) {
     if (arguments.length !== 3) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    var n_by_2_2971 = M1.unsafe_fxrshift(n2970, 1);
-    var n_by_2_plus_2972 = M1.unsafe_fx_(n2970, n_by_2_2971);
-    var copying_mergesort2973 = function(Alo2974, Blo2975, n2976) {
+    var n_by_2_2001 = M1.unsafe_fxrshift(n2000, 1);
+    var n_by_2_plus_2002 = M1.unsafe_fx_(n2000, n_by_2_2001);
+    var copying_mergesort2003 = function(Alo2004, Blo2005, n2006) {
         if (arguments.length !== 3) {
             throw $rjs_core.racketContractError("arity mismatch");
         } else {}
-        if (M1.unsafe_fx_eq_(n2976, 1) !== false) {
-            var if_res1733 = M1.unsafe_vector_set_bang_(A2968, Blo2975, M1.unsafe_vector_ref(A2968, Alo2974));
+        if (M1.unsafe_fx_eq_(n2006, 1) !== false) {
+            var if_res909 = M1.unsafe_vector_set_bang_(A1998, Blo2005, M1.unsafe_vector_ref(A1998, Alo2004));
         } else {
-            if (M1.unsafe_fx_eq_(n2976, 2) !== false) {
-                var x2977 = M1.unsafe_vector_ref(A2968, Alo2974);
-                var y2978 = M1.unsafe_vector_ref(A2968, M1.unsafe_fx_plus_(Alo2974, 1));
+            if (M1.unsafe_fx_eq_(n2006, 2) !== false) {
+                var x2007 = M1.unsafe_vector_ref(A1998, Alo2004);
+                var y2008 = M1.unsafe_vector_ref(A1998, M1.unsafe_fx_plus_(Alo2004, 1));
                 if (false !== false) {
-                    var if_res1718 = less_than_p2969(false(y2978), false(x2977));
+                    var if_res894 = less_than_p1999(false(y2008), false(x2007));
                 } else {
-                    var if_res1718 = less_than_p2969(y2978, x2977);
+                    var if_res894 = less_than_p1999(y2008, x2007);
                 }
-                if (if_res1718 !== false) {
-                    M1.unsafe_vector_set_bang_(A2968, Blo2975, y2978);
-                    var if_res1719 = M1.unsafe_vector_set_bang_(A2968, M1.unsafe_fx_plus_(Blo2975, 1), x2977);
+                if (if_res894 !== false) {
+                    M1.unsafe_vector_set_bang_(A1998, Blo2005, y2008);
+                    var if_res895 = M1.unsafe_vector_set_bang_(A1998, M1.unsafe_fx_plus_(Blo2005, 1), x2007);
                 } else {
-                    M1.unsafe_vector_set_bang_(A2968, Blo2975, x2977);
-                    var if_res1719 = M1.unsafe_vector_set_bang_(A2968, M1.unsafe_fx_plus_(Blo2975, 1), y2978);
+                    M1.unsafe_vector_set_bang_(A1998, Blo2005, x2007);
+                    var if_res895 = M1.unsafe_vector_set_bang_(A1998, M1.unsafe_fx_plus_(Blo2005, 1), y2008);
                 }
-                var if_res1732 = if_res1719;
+                var if_res908 = if_res895;
             } else {
-                if (M1.unsafe_fx_lt_(n2976, 16) !== false) {
-                    M1.unsafe_vector_set_bang_(A2968, Blo2975, M1.unsafe_vector_ref(A2968, Alo2974));
-                    var iloop2979 = function(i2980) {
+                if (M1.unsafe_fx_lt_(n2006, 16) !== false) {
+                    M1.unsafe_vector_set_bang_(A1998, Blo2005, M1.unsafe_vector_ref(A1998, Alo2004));
+                    var iloop2009 = function(i2010) {
                         if (arguments.length !== 1) {
                             throw $rjs_core.racketContractError("arity mismatch");
                         } else {}
-                        if (M1.unsafe_fx_lt_(i2980, n2976) !== false) {
-                            var ref_i2981 = M1.unsafe_vector_ref(A2968, M1.unsafe_fx_plus_(Alo2974, i2980));
-                            var jloop2982 = function(j2983) {
+                        if (M1.unsafe_fx_lt_(i2010, n2006) !== false) {
+                            var ref_i2011 = M1.unsafe_vector_ref(A1998, M1.unsafe_fx_plus_(Alo2004, i2010));
+                            var jloop2012 = function(j2013) {
                                 if (arguments.length !== 1) {
                                     throw $rjs_core.racketContractError("arity mismatch");
                                 } else {}
-                                var ref_j_12984 = M1.unsafe_vector_ref(A2968, M1.unsafe_fx_(j2983, 1));
-                                if (M1.unsafe_fx_lt_(Blo2975, j2983) !== false) {
+                                var ref_j_12014 = M1.unsafe_vector_ref(A1998, M1.unsafe_fx_(j2013, 1));
+                                if (M1.unsafe_fx_lt_(Blo2005, j2013) !== false) {
                                     if (false !== false) {
-                                        var if_res1720 = less_than_p2969(false(ref_i2981), false(ref_j_12984));
+                                        var if_res896 = less_than_p1999(false(ref_i2011), false(ref_j_12014));
                                     } else {
-                                        var if_res1720 = less_than_p2969(ref_i2981, ref_j_12984);
+                                        var if_res896 = less_than_p1999(ref_i2011, ref_j_12014);
                                     }
-                                    var if_res1721 = if_res1720;
+                                    var if_res897 = if_res896;
                                 } else {
-                                    var if_res1721 = false;
+                                    var if_res897 = false;
                                 }
-                                if (if_res1721 !== false) {
-                                    M1.unsafe_vector_set_bang_(A2968, j2983, ref_j_12984);
-                                    var if_res1722 = jloop2982(M1.unsafe_fx_(j2983, 1));
+                                if (if_res897 !== false) {
+                                    M1.unsafe_vector_set_bang_(A1998, j2013, ref_j_12014);
+                                    var if_res898 = jloop2012(M1.unsafe_fx_(j2013, 1));
                                 } else {
-                                    M1.unsafe_vector_set_bang_(A2968, j2983, ref_i2981);
-                                    var if_res1722 = iloop2979(M1.unsafe_fx_plus_(i2980, 1));
+                                    M1.unsafe_vector_set_bang_(A1998, j2013, ref_i2011);
+                                    var if_res898 = iloop2009(M1.unsafe_fx_plus_(i2010, 1));
                                 }
-                                return if_res1722;
+                                return if_res898;
                             };
-                            var if_res1723 = jloop2982(M1.unsafe_fx_plus_(Blo2975, i2980));
+                            var if_res899 = jloop2012(M1.unsafe_fx_plus_(Blo2005, i2010));
                         } else {
-                            var if_res1723 = M0.rvoid();
+                            var if_res899 = M0.rvoid();
                         }
-                        return if_res1723;
+                        return if_res899;
                     };
-                    var if_res1731 = iloop2979(1);
+                    var if_res907 = iloop2009(1);
                 } else {
-                    var n_by_2_2985 = M1.unsafe_fxrshift(n2976, 1);
-                    var n_by_2_plus_2986 = M1.unsafe_fx_(n2976, n_by_2_2985);
-                    var Amid12987 = M1.unsafe_fx_plus_(Alo2974, n_by_2_2985);
-                    var Amid22988 = M1.unsafe_fx_plus_(Alo2974, n_by_2_plus_2986);
-                    var Bmid12989 = M1.unsafe_fx_plus_(Blo2975, n_by_2_2985);
-                    copying_mergesort2973(Amid12987, Bmid12989, n_by_2_plus_2986);
-                    copying_mergesort2973(Alo2974, Amid22988, n_by_2_2985);
-                    var b22990 = M1.unsafe_fx_plus_(Blo2975, n2976);
-                    var loop2991 = function(a12992, b12993, c12994) {
+                    var n_by_2_2015 = M1.unsafe_fxrshift(n2006, 1);
+                    var n_by_2_plus_2016 = M1.unsafe_fx_(n2006, n_by_2_2015);
+                    var Amid12017 = M1.unsafe_fx_plus_(Alo2004, n_by_2_2015);
+                    var Amid22018 = M1.unsafe_fx_plus_(Alo2004, n_by_2_plus_2016);
+                    var Bmid12019 = M1.unsafe_fx_plus_(Blo2005, n_by_2_2015);
+                    copying_mergesort2003(Amid12017, Bmid12019, n_by_2_plus_2016);
+                    copying_mergesort2003(Alo2004, Amid22018, n_by_2_2015);
+                    var b22020 = M1.unsafe_fx_plus_(Blo2005, n2006);
+                    var loop2021 = function(a12022, b12023, c12024) {
                         if (arguments.length !== 3) {
                             throw $rjs_core.racketContractError("arity mismatch");
                         } else {}
-                        var x2995 = M1.unsafe_vector_ref(A2968, a12992);
-                        var y2996 = M1.unsafe_vector_ref(A2968, b12993);
+                        var x2025 = M1.unsafe_vector_ref(A1998, a12022);
+                        var y2026 = M1.unsafe_vector_ref(A1998, b12023);
                         if (true !== false) {
                             if (false !== false) {
-                                var if_res1724 = less_than_p2969(false(y2996), false(x2995));
+                                var if_res900 = less_than_p1999(false(y2026), false(x2025));
                             } else {
-                                var if_res1724 = less_than_p2969(y2996, x2995);
+                                var if_res900 = less_than_p1999(y2026, x2025);
                             }
-                            var if_res1726 = M0.not(if_res1724);
+                            var if_res902 = M0.not(if_res900);
                         } else {
                             if (false !== false) {
-                                var if_res1725 = less_than_p2969(false(x2995), false(y2996));
+                                var if_res901 = less_than_p1999(false(x2025), false(y2026));
                             } else {
-                                var if_res1725 = less_than_p2969(x2995, y2996);
+                                var if_res901 = less_than_p1999(x2025, y2026);
                             }
-                            var if_res1726 = if_res1725;
+                            var if_res902 = if_res901;
                         }
-                        if (if_res1726 !== false) {
-                            M1.unsafe_vector_set_bang_(A2968, c12994, x2995);
-                            var a12997 = M1.unsafe_fx_plus_(a12992, 1);
-                            var c12998 = M1.unsafe_fx_plus_(c12994, 1);
-                            if (M1.unsafe_fx_lt_(c12998, b12993) !== false) {
-                                var if_res1727 = loop2991(a12997, b12993, c12998);
+                        if (if_res902 !== false) {
+                            M1.unsafe_vector_set_bang_(A1998, c12024, x2025);
+                            var a12027 = M1.unsafe_fx_plus_(a12022, 1);
+                            var c12028 = M1.unsafe_fx_plus_(c12024, 1);
+                            if (M1.unsafe_fx_lt_(c12028, b12023) !== false) {
+                                var if_res903 = loop2021(a12027, b12023, c12028);
                             } else {
-                                var if_res1727 = M0.rvoid();
+                                var if_res903 = M0.rvoid();
                             }
-                            var if_res1730 = if_res1727;
+                            var if_res906 = if_res903;
                         } else {
-                            M1.unsafe_vector_set_bang_(A2968, c12994, y2996);
-                            var b12999 = M1.unsafe_fx_plus_(b12993, 1);
-                            var c13000 = M1.unsafe_fx_plus_(c12994, 1);
-                            if (M1.unsafe_fx_lt__eq_(b22990, b12999) !== false) {
-                                var loop3001 = function(a13002, c13003) {
+                            M1.unsafe_vector_set_bang_(A1998, c12024, y2026);
+                            var b12029 = M1.unsafe_fx_plus_(b12023, 1);
+                            var c12030 = M1.unsafe_fx_plus_(c12024, 1);
+                            if (M1.unsafe_fx_lt__eq_(b22020, b12029) !== false) {
+                                var loop2031 = function(a12032, c12033) {
                                     if (arguments.length !== 2) {
                                         throw $rjs_core.racketContractError("arity mismatch");
                                     } else {}
-                                    if (M1.unsafe_fx_lt_(c13003, b12999) !== false) {
-                                        M1.unsafe_vector_set_bang_(A2968, c13003, M1.unsafe_vector_ref(A2968, a13002));
-                                        var if_res1728 = loop3001(M1.unsafe_fx_plus_(a13002, 1), M1.unsafe_fx_plus_(c13003, 1));
+                                    if (M1.unsafe_fx_lt_(c12033, b12029) !== false) {
+                                        M1.unsafe_vector_set_bang_(A1998, c12033, M1.unsafe_vector_ref(A1998, a12032));
+                                        var if_res904 = loop2031(M1.unsafe_fx_plus_(a12032, 1), M1.unsafe_fx_plus_(c12033, 1));
                                     } else {
-                                        var if_res1728 = M0.rvoid();
+                                        var if_res904 = M0.rvoid();
                                     }
-                                    return if_res1728;
+                                    return if_res904;
                                 };
-                                var if_res1729 = loop3001(a12992, c13000);
+                                var if_res905 = loop2031(a12022, c12030);
                             } else {
-                                var if_res1729 = loop2991(a12992, b12999, c13000);
+                                var if_res905 = loop2021(a12022, b12029, c12030);
                             }
-                            var if_res1730 = if_res1729;
+                            var if_res906 = if_res905;
                         }
-                        return if_res1730;
+                        return if_res906;
                     };
-                    var if_res1731 = loop2991(Amid22988, Bmid12989, Blo2975);
+                    var if_res907 = loop2021(Amid22018, Bmid12019, Blo2005);
                 }
-                var if_res1732 = if_res1731;
+                var if_res908 = if_res907;
             }
-            var if_res1733 = if_res1732;
+            var if_res909 = if_res908;
         }
-        return if_res1733;
+        return if_res909;
     };
-    var Alo3004 = 0;
-    var Amid13005 = n_by_2_2971;
-    var Amid23006 = n_by_2_plus_2972;
-    var Ahi3007 = n2970;
-    var B1lo3008 = n2970;
-    copying_mergesort2973(Amid13005, B1lo3008, n_by_2_plus_2972);
-    if (M0.zero_p(n_by_2_2971) !== false) {
-        var if_res1734 = M0.rvoid();
+    var Alo2034 = 0;
+    var Amid12035 = n_by_2_2001;
+    var Amid22036 = n_by_2_plus_2002;
+    var Ahi2037 = n2000;
+    var B1lo2038 = n2000;
+    copying_mergesort2003(Amid12035, B1lo2038, n_by_2_plus_2002);
+    if (M0.zero_p(n_by_2_2001) !== false) {
+        var if_res910 = M0.rvoid();
     } else {
-        var if_res1734 = copying_mergesort2973(Alo3004, Amid23006, n_by_2_2971);
+        var if_res910 = copying_mergesort2003(Alo2034, Amid22036, n_by_2_2001);
     }
-    if_res1734;
-    var b23009 = Ahi3007;
-    var loop3010 = function(a13011, b13012, c13013) {
+    if_res910;
+    var b22039 = Ahi2037;
+    var loop2040 = function(a12041, b12042, c12043) {
         if (arguments.length !== 3) {
             throw $rjs_core.racketContractError("arity mismatch");
         } else {}
-        var x3014 = M1.unsafe_vector_ref(A2968, a13011);
-        var y3015 = M1.unsafe_vector_ref(A2968, b13012);
+        var x2044 = M1.unsafe_vector_ref(A1998, a12041);
+        var y2045 = M1.unsafe_vector_ref(A1998, b12042);
         if (false !== false) {
             if (false !== false) {
-                var if_res1735 = less_than_p2969(false(y3015), false(x3014));
+                var if_res911 = less_than_p1999(false(y2045), false(x2044));
             } else {
-                var if_res1735 = less_than_p2969(y3015, x3014);
+                var if_res911 = less_than_p1999(y2045, x2044);
             }
-            var if_res1737 = M0.not(if_res1735);
+            var if_res913 = M0.not(if_res911);
         } else {
             if (false !== false) {
-                var if_res1736 = less_than_p2969(false(x3014), false(y3015));
+                var if_res912 = less_than_p1999(false(x2044), false(y2045));
             } else {
-                var if_res1736 = less_than_p2969(x3014, y3015);
+                var if_res912 = less_than_p1999(x2044, y2045);
             }
-            var if_res1737 = if_res1736;
+            var if_res913 = if_res912;
         }
-        if (if_res1737 !== false) {
-            M1.unsafe_vector_set_bang_(A2968, c13013, x3014);
-            var a13016 = M1.unsafe_fx_plus_(a13011, 1);
-            var c13017 = M1.unsafe_fx_plus_(c13013, 1);
-            if (M1.unsafe_fx_lt_(c13017, b13012) !== false) {
-                var if_res1738 = loop3010(a13016, b13012, c13017);
+        if (if_res913 !== false) {
+            M1.unsafe_vector_set_bang_(A1998, c12043, x2044);
+            var a12046 = M1.unsafe_fx_plus_(a12041, 1);
+            var c12047 = M1.unsafe_fx_plus_(c12043, 1);
+            if (M1.unsafe_fx_lt_(c12047, b12042) !== false) {
+                var if_res914 = loop2040(a12046, b12042, c12047);
             } else {
-                var if_res1738 = M0.rvoid();
+                var if_res914 = M0.rvoid();
             }
-            var if_res1741 = if_res1738;
+            var if_res917 = if_res914;
         } else {
-            M1.unsafe_vector_set_bang_(A2968, c13013, y3015);
-            var b13018 = M1.unsafe_fx_plus_(b13012, 1);
-            var c13019 = M1.unsafe_fx_plus_(c13013, 1);
-            if (M1.unsafe_fx_lt__eq_(b23009, b13018) !== false) {
-                var loop3020 = function(a13021, c13022) {
+            M1.unsafe_vector_set_bang_(A1998, c12043, y2045);
+            var b12048 = M1.unsafe_fx_plus_(b12042, 1);
+            var c12049 = M1.unsafe_fx_plus_(c12043, 1);
+            if (M1.unsafe_fx_lt__eq_(b22039, b12048) !== false) {
+                var loop2050 = function(a12051, c12052) {
                     if (arguments.length !== 2) {
                         throw $rjs_core.racketContractError("arity mismatch");
                     } else {}
-                    if (M1.unsafe_fx_lt_(c13022, b13018) !== false) {
-                        M1.unsafe_vector_set_bang_(A2968, c13022, M1.unsafe_vector_ref(A2968, a13021));
-                        var if_res1739 = loop3020(M1.unsafe_fx_plus_(a13021, 1), M1.unsafe_fx_plus_(c13022, 1));
+                    if (M1.unsafe_fx_lt_(c12052, b12048) !== false) {
+                        M1.unsafe_vector_set_bang_(A1998, c12052, M1.unsafe_vector_ref(A1998, a12051));
+                        var if_res915 = loop2050(M1.unsafe_fx_plus_(a12051, 1), M1.unsafe_fx_plus_(c12052, 1));
                     } else {
-                        var if_res1739 = M0.rvoid();
+                        var if_res915 = M0.rvoid();
                     }
-                    return if_res1739;
+                    return if_res915;
                 };
-                var if_res1740 = loop3020(a13011, c13019);
+                var if_res916 = loop2050(a12041, c12049);
             } else {
-                var if_res1740 = loop3010(a13011, b13018, c13019);
+                var if_res916 = loop2040(a12041, b12048, c12049);
             }
-            var if_res1741 = if_res1740;
+            var if_res917 = if_res916;
         }
-        return if_res1741;
+        return if_res917;
     };
-    return loop3010(B1lo3008, Amid23006, Alo3004);
+    return loop2040(B1lo2038, Amid22036, Alo2034);
 };
-var generic_sort_by_key3023 = function(A3024, less_than_p3025, n3026, key3027) {
+var generic_sort_by_key2053 = function(A2054, less_than_p2055, n2056, key2057) {
     if (arguments.length !== 4) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    var n_by_2_3028 = M1.unsafe_fxrshift(n3026, 1);
-    var n_by_2_plus_3029 = M1.unsafe_fx_(n3026, n_by_2_3028);
-    var copying_mergesort3030 = function(Alo3031, Blo3032, n3033) {
+    var n_by_2_2058 = M1.unsafe_fxrshift(n2056, 1);
+    var n_by_2_plus_2059 = M1.unsafe_fx_(n2056, n_by_2_2058);
+    var copying_mergesort2060 = function(Alo2061, Blo2062, n2063) {
         if (arguments.length !== 3) {
             throw $rjs_core.racketContractError("arity mismatch");
         } else {}
-        if (M1.unsafe_fx_eq_(n3033, 1) !== false) {
-            var if_res1757 = M1.unsafe_vector_set_bang_(A3024, Blo3032, M1.unsafe_vector_ref(A3024, Alo3031));
+        if (M1.unsafe_fx_eq_(n2063, 1) !== false) {
+            var if_res933 = M1.unsafe_vector_set_bang_(A2054, Blo2062, M1.unsafe_vector_ref(A2054, Alo2061));
         } else {
-            if (M1.unsafe_fx_eq_(n3033, 2) !== false) {
-                var x3034 = M1.unsafe_vector_ref(A3024, Alo3031);
-                var y3035 = M1.unsafe_vector_ref(A3024, M1.unsafe_fx_plus_(Alo3031, 1));
-                if (key3027 !== false) {
-                    var if_res1742 = less_than_p3025(key3027(y3035), key3027(x3034));
+            if (M1.unsafe_fx_eq_(n2063, 2) !== false) {
+                var x2064 = M1.unsafe_vector_ref(A2054, Alo2061);
+                var y2065 = M1.unsafe_vector_ref(A2054, M1.unsafe_fx_plus_(Alo2061, 1));
+                if (key2057 !== false) {
+                    var if_res918 = less_than_p2055(key2057(y2065), key2057(x2064));
                 } else {
-                    var if_res1742 = less_than_p3025(y3035, x3034);
+                    var if_res918 = less_than_p2055(y2065, x2064);
                 }
-                if (if_res1742 !== false) {
-                    M1.unsafe_vector_set_bang_(A3024, Blo3032, y3035);
-                    var if_res1743 = M1.unsafe_vector_set_bang_(A3024, M1.unsafe_fx_plus_(Blo3032, 1), x3034);
+                if (if_res918 !== false) {
+                    M1.unsafe_vector_set_bang_(A2054, Blo2062, y2065);
+                    var if_res919 = M1.unsafe_vector_set_bang_(A2054, M1.unsafe_fx_plus_(Blo2062, 1), x2064);
                 } else {
-                    M1.unsafe_vector_set_bang_(A3024, Blo3032, x3034);
-                    var if_res1743 = M1.unsafe_vector_set_bang_(A3024, M1.unsafe_fx_plus_(Blo3032, 1), y3035);
+                    M1.unsafe_vector_set_bang_(A2054, Blo2062, x2064);
+                    var if_res919 = M1.unsafe_vector_set_bang_(A2054, M1.unsafe_fx_plus_(Blo2062, 1), y2065);
                 }
-                var if_res1756 = if_res1743;
+                var if_res932 = if_res919;
             } else {
-                if (M1.unsafe_fx_lt_(n3033, 16) !== false) {
-                    M1.unsafe_vector_set_bang_(A3024, Blo3032, M1.unsafe_vector_ref(A3024, Alo3031));
-                    var iloop3036 = function(i3037) {
+                if (M1.unsafe_fx_lt_(n2063, 16) !== false) {
+                    M1.unsafe_vector_set_bang_(A2054, Blo2062, M1.unsafe_vector_ref(A2054, Alo2061));
+                    var iloop2066 = function(i2067) {
                         if (arguments.length !== 1) {
                             throw $rjs_core.racketContractError("arity mismatch");
                         } else {}
-                        if (M1.unsafe_fx_lt_(i3037, n3033) !== false) {
-                            var ref_i3038 = M1.unsafe_vector_ref(A3024, M1.unsafe_fx_plus_(Alo3031, i3037));
-                            var jloop3039 = function(j3040) {
+                        if (M1.unsafe_fx_lt_(i2067, n2063) !== false) {
+                            var ref_i2068 = M1.unsafe_vector_ref(A2054, M1.unsafe_fx_plus_(Alo2061, i2067));
+                            var jloop2069 = function(j2070) {
                                 if (arguments.length !== 1) {
                                     throw $rjs_core.racketContractError("arity mismatch");
                                 } else {}
-                                var ref_j_13041 = M1.unsafe_vector_ref(A3024, M1.unsafe_fx_(j3040, 1));
-                                if (M1.unsafe_fx_lt_(Blo3032, j3040) !== false) {
-                                    if (key3027 !== false) {
-                                        var if_res1744 = less_than_p3025(key3027(ref_i3038), key3027(ref_j_13041));
+                                var ref_j_12071 = M1.unsafe_vector_ref(A2054, M1.unsafe_fx_(j2070, 1));
+                                if (M1.unsafe_fx_lt_(Blo2062, j2070) !== false) {
+                                    if (key2057 !== false) {
+                                        var if_res920 = less_than_p2055(key2057(ref_i2068), key2057(ref_j_12071));
                                     } else {
-                                        var if_res1744 = less_than_p3025(ref_i3038, ref_j_13041);
+                                        var if_res920 = less_than_p2055(ref_i2068, ref_j_12071);
                                     }
-                                    var if_res1745 = if_res1744;
+                                    var if_res921 = if_res920;
                                 } else {
-                                    var if_res1745 = false;
+                                    var if_res921 = false;
                                 }
-                                if (if_res1745 !== false) {
-                                    M1.unsafe_vector_set_bang_(A3024, j3040, ref_j_13041);
-                                    var if_res1746 = jloop3039(M1.unsafe_fx_(j3040, 1));
+                                if (if_res921 !== false) {
+                                    M1.unsafe_vector_set_bang_(A2054, j2070, ref_j_12071);
+                                    var if_res922 = jloop2069(M1.unsafe_fx_(j2070, 1));
                                 } else {
-                                    M1.unsafe_vector_set_bang_(A3024, j3040, ref_i3038);
-                                    var if_res1746 = iloop3036(M1.unsafe_fx_plus_(i3037, 1));
+                                    M1.unsafe_vector_set_bang_(A2054, j2070, ref_i2068);
+                                    var if_res922 = iloop2066(M1.unsafe_fx_plus_(i2067, 1));
                                 }
-                                return if_res1746;
+                                return if_res922;
                             };
-                            var if_res1747 = jloop3039(M1.unsafe_fx_plus_(Blo3032, i3037));
+                            var if_res923 = jloop2069(M1.unsafe_fx_plus_(Blo2062, i2067));
                         } else {
-                            var if_res1747 = M0.rvoid();
+                            var if_res923 = M0.rvoid();
                         }
-                        return if_res1747;
+                        return if_res923;
                     };
-                    var if_res1755 = iloop3036(1);
+                    var if_res931 = iloop2066(1);
                 } else {
-                    var n_by_2_3042 = M1.unsafe_fxrshift(n3033, 1);
-                    var n_by_2_plus_3043 = M1.unsafe_fx_(n3033, n_by_2_3042);
-                    var Amid13044 = M1.unsafe_fx_plus_(Alo3031, n_by_2_3042);
-                    var Amid23045 = M1.unsafe_fx_plus_(Alo3031, n_by_2_plus_3043);
-                    var Bmid13046 = M1.unsafe_fx_plus_(Blo3032, n_by_2_3042);
-                    copying_mergesort3030(Amid13044, Bmid13046, n_by_2_plus_3043);
-                    copying_mergesort3030(Alo3031, Amid23045, n_by_2_3042);
-                    var b23047 = M1.unsafe_fx_plus_(Blo3032, n3033);
-                    var loop3048 = function(a13049, b13050, c13051) {
+                    var n_by_2_2072 = M1.unsafe_fxrshift(n2063, 1);
+                    var n_by_2_plus_2073 = M1.unsafe_fx_(n2063, n_by_2_2072);
+                    var Amid12074 = M1.unsafe_fx_plus_(Alo2061, n_by_2_2072);
+                    var Amid22075 = M1.unsafe_fx_plus_(Alo2061, n_by_2_plus_2073);
+                    var Bmid12076 = M1.unsafe_fx_plus_(Blo2062, n_by_2_2072);
+                    copying_mergesort2060(Amid12074, Bmid12076, n_by_2_plus_2073);
+                    copying_mergesort2060(Alo2061, Amid22075, n_by_2_2072);
+                    var b22077 = M1.unsafe_fx_plus_(Blo2062, n2063);
+                    var loop2078 = function(a12079, b12080, c12081) {
                         if (arguments.length !== 3) {
                             throw $rjs_core.racketContractError("arity mismatch");
                         } else {}
-                        var x3052 = M1.unsafe_vector_ref(A3024, a13049);
-                        var y3053 = M1.unsafe_vector_ref(A3024, b13050);
+                        var x2082 = M1.unsafe_vector_ref(A2054, a12079);
+                        var y2083 = M1.unsafe_vector_ref(A2054, b12080);
                         if (true !== false) {
-                            if (key3027 !== false) {
-                                var if_res1748 = less_than_p3025(key3027(y3053), key3027(x3052));
+                            if (key2057 !== false) {
+                                var if_res924 = less_than_p2055(key2057(y2083), key2057(x2082));
                             } else {
-                                var if_res1748 = less_than_p3025(y3053, x3052);
+                                var if_res924 = less_than_p2055(y2083, x2082);
                             }
-                            var if_res1750 = M0.not(if_res1748);
+                            var if_res926 = M0.not(if_res924);
                         } else {
-                            if (key3027 !== false) {
-                                var if_res1749 = less_than_p3025(key3027(x3052), key3027(y3053));
+                            if (key2057 !== false) {
+                                var if_res925 = less_than_p2055(key2057(x2082), key2057(y2083));
                             } else {
-                                var if_res1749 = less_than_p3025(x3052, y3053);
+                                var if_res925 = less_than_p2055(x2082, y2083);
                             }
-                            var if_res1750 = if_res1749;
+                            var if_res926 = if_res925;
                         }
-                        if (if_res1750 !== false) {
-                            M1.unsafe_vector_set_bang_(A3024, c13051, x3052);
-                            var a13054 = M1.unsafe_fx_plus_(a13049, 1);
-                            var c13055 = M1.unsafe_fx_plus_(c13051, 1);
-                            if (M1.unsafe_fx_lt_(c13055, b13050) !== false) {
-                                var if_res1751 = loop3048(a13054, b13050, c13055);
+                        if (if_res926 !== false) {
+                            M1.unsafe_vector_set_bang_(A2054, c12081, x2082);
+                            var a12084 = M1.unsafe_fx_plus_(a12079, 1);
+                            var c12085 = M1.unsafe_fx_plus_(c12081, 1);
+                            if (M1.unsafe_fx_lt_(c12085, b12080) !== false) {
+                                var if_res927 = loop2078(a12084, b12080, c12085);
                             } else {
-                                var if_res1751 = M0.rvoid();
+                                var if_res927 = M0.rvoid();
                             }
-                            var if_res1754 = if_res1751;
+                            var if_res930 = if_res927;
                         } else {
-                            M1.unsafe_vector_set_bang_(A3024, c13051, y3053);
-                            var b13056 = M1.unsafe_fx_plus_(b13050, 1);
-                            var c13057 = M1.unsafe_fx_plus_(c13051, 1);
-                            if (M1.unsafe_fx_lt__eq_(b23047, b13056) !== false) {
-                                var loop3058 = function(a13059, c13060) {
+                            M1.unsafe_vector_set_bang_(A2054, c12081, y2083);
+                            var b12086 = M1.unsafe_fx_plus_(b12080, 1);
+                            var c12087 = M1.unsafe_fx_plus_(c12081, 1);
+                            if (M1.unsafe_fx_lt__eq_(b22077, b12086) !== false) {
+                                var loop2088 = function(a12089, c12090) {
                                     if (arguments.length !== 2) {
                                         throw $rjs_core.racketContractError("arity mismatch");
                                     } else {}
-                                    if (M1.unsafe_fx_lt_(c13060, b13056) !== false) {
-                                        M1.unsafe_vector_set_bang_(A3024, c13060, M1.unsafe_vector_ref(A3024, a13059));
-                                        var if_res1752 = loop3058(M1.unsafe_fx_plus_(a13059, 1), M1.unsafe_fx_plus_(c13060, 1));
+                                    if (M1.unsafe_fx_lt_(c12090, b12086) !== false) {
+                                        M1.unsafe_vector_set_bang_(A2054, c12090, M1.unsafe_vector_ref(A2054, a12089));
+                                        var if_res928 = loop2088(M1.unsafe_fx_plus_(a12089, 1), M1.unsafe_fx_plus_(c12090, 1));
                                     } else {
-                                        var if_res1752 = M0.rvoid();
+                                        var if_res928 = M0.rvoid();
                                     }
-                                    return if_res1752;
+                                    return if_res928;
                                 };
-                                var if_res1753 = loop3058(a13049, c13057);
+                                var if_res929 = loop2088(a12079, c12087);
                             } else {
-                                var if_res1753 = loop3048(a13049, b13056, c13057);
+                                var if_res929 = loop2078(a12079, b12086, c12087);
                             }
-                            var if_res1754 = if_res1753;
+                            var if_res930 = if_res929;
                         }
-                        return if_res1754;
+                        return if_res930;
                     };
-                    var if_res1755 = loop3048(Amid23045, Bmid13046, Blo3032);
+                    var if_res931 = loop2078(Amid22075, Bmid12076, Blo2062);
                 }
-                var if_res1756 = if_res1755;
+                var if_res932 = if_res931;
             }
-            var if_res1757 = if_res1756;
+            var if_res933 = if_res932;
         }
-        return if_res1757;
+        return if_res933;
     };
-    var Alo3061 = 0;
-    var Amid13062 = n_by_2_3028;
-    var Amid23063 = n_by_2_plus_3029;
-    var Ahi3064 = n3026;
-    var B1lo3065 = n3026;
-    copying_mergesort3030(Amid13062, B1lo3065, n_by_2_plus_3029);
-    if (M0.zero_p(n_by_2_3028) !== false) {
-        var if_res1758 = M0.rvoid();
+    var Alo2091 = 0;
+    var Amid12092 = n_by_2_2058;
+    var Amid22093 = n_by_2_plus_2059;
+    var Ahi2094 = n2056;
+    var B1lo2095 = n2056;
+    copying_mergesort2060(Amid12092, B1lo2095, n_by_2_plus_2059);
+    if (M0.zero_p(n_by_2_2058) !== false) {
+        var if_res934 = M0.rvoid();
     } else {
-        var if_res1758 = copying_mergesort3030(Alo3061, Amid23063, n_by_2_3028);
+        var if_res934 = copying_mergesort2060(Alo2091, Amid22093, n_by_2_2058);
     }
-    if_res1758;
-    var b23066 = Ahi3064;
-    var loop3067 = function(a13068, b13069, c13070) {
+    if_res934;
+    var b22096 = Ahi2094;
+    var loop2097 = function(a12098, b12099, c12100) {
         if (arguments.length !== 3) {
             throw $rjs_core.racketContractError("arity mismatch");
         } else {}
-        var x3071 = M1.unsafe_vector_ref(A3024, a13068);
-        var y3072 = M1.unsafe_vector_ref(A3024, b13069);
+        var x2101 = M1.unsafe_vector_ref(A2054, a12098);
+        var y2102 = M1.unsafe_vector_ref(A2054, b12099);
         if (false !== false) {
-            if (key3027 !== false) {
-                var if_res1759 = less_than_p3025(key3027(y3072), key3027(x3071));
+            if (key2057 !== false) {
+                var if_res935 = less_than_p2055(key2057(y2102), key2057(x2101));
             } else {
-                var if_res1759 = less_than_p3025(y3072, x3071);
+                var if_res935 = less_than_p2055(y2102, x2101);
             }
-            var if_res1761 = M0.not(if_res1759);
+            var if_res937 = M0.not(if_res935);
         } else {
-            if (key3027 !== false) {
-                var if_res1760 = less_than_p3025(key3027(x3071), key3027(y3072));
+            if (key2057 !== false) {
+                var if_res936 = less_than_p2055(key2057(x2101), key2057(y2102));
             } else {
-                var if_res1760 = less_than_p3025(x3071, y3072);
+                var if_res936 = less_than_p2055(x2101, y2102);
             }
-            var if_res1761 = if_res1760;
+            var if_res937 = if_res936;
         }
-        if (if_res1761 !== false) {
-            M1.unsafe_vector_set_bang_(A3024, c13070, x3071);
-            var a13073 = M1.unsafe_fx_plus_(a13068, 1);
-            var c13074 = M1.unsafe_fx_plus_(c13070, 1);
-            if (M1.unsafe_fx_lt_(c13074, b13069) !== false) {
-                var if_res1762 = loop3067(a13073, b13069, c13074);
+        if (if_res937 !== false) {
+            M1.unsafe_vector_set_bang_(A2054, c12100, x2101);
+            var a12103 = M1.unsafe_fx_plus_(a12098, 1);
+            var c12104 = M1.unsafe_fx_plus_(c12100, 1);
+            if (M1.unsafe_fx_lt_(c12104, b12099) !== false) {
+                var if_res938 = loop2097(a12103, b12099, c12104);
             } else {
-                var if_res1762 = M0.rvoid();
+                var if_res938 = M0.rvoid();
             }
-            var if_res1765 = if_res1762;
+            var if_res941 = if_res938;
         } else {
-            M1.unsafe_vector_set_bang_(A3024, c13070, y3072);
-            var b13075 = M1.unsafe_fx_plus_(b13069, 1);
-            var c13076 = M1.unsafe_fx_plus_(c13070, 1);
-            if (M1.unsafe_fx_lt__eq_(b23066, b13075) !== false) {
-                var loop3077 = function(a13078, c13079) {
+            M1.unsafe_vector_set_bang_(A2054, c12100, y2102);
+            var b12105 = M1.unsafe_fx_plus_(b12099, 1);
+            var c12106 = M1.unsafe_fx_plus_(c12100, 1);
+            if (M1.unsafe_fx_lt__eq_(b22096, b12105) !== false) {
+                var loop2107 = function(a12108, c12109) {
                     if (arguments.length !== 2) {
                         throw $rjs_core.racketContractError("arity mismatch");
                     } else {}
-                    if (M1.unsafe_fx_lt_(c13079, b13075) !== false) {
-                        M1.unsafe_vector_set_bang_(A3024, c13079, M1.unsafe_vector_ref(A3024, a13078));
-                        var if_res1763 = loop3077(M1.unsafe_fx_plus_(a13078, 1), M1.unsafe_fx_plus_(c13079, 1));
+                    if (M1.unsafe_fx_lt_(c12109, b12105) !== false) {
+                        M1.unsafe_vector_set_bang_(A2054, c12109, M1.unsafe_vector_ref(A2054, a12108));
+                        var if_res939 = loop2107(M1.unsafe_fx_plus_(a12108, 1), M1.unsafe_fx_plus_(c12109, 1));
                     } else {
-                        var if_res1763 = M0.rvoid();
+                        var if_res939 = M0.rvoid();
                     }
-                    return if_res1763;
+                    return if_res939;
                 };
-                var if_res1764 = loop3077(a13068, c13076);
+                var if_res940 = loop2107(a12098, c12106);
             } else {
-                var if_res1764 = loop3067(a13068, b13075, c13076);
+                var if_res940 = loop2097(a12098, b12105, c12106);
             }
-            var if_res1765 = if_res1764;
+            var if_res941 = if_res940;
         }
-        return if_res1765;
+        return if_res941;
     };
-    return loop3067(B1lo3065, Amid23063, Alo3061);
+    return loop2097(B1lo2095, Amid22093, Alo2091);
 };
-var cl1873 = function(lst3080, less_than_p3081) {
+var cl1049 = function(lst2110, less_than_p2111) {
     if (arguments.length !== 2) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    var n3082 = M0.length(lst3080);
-    if (M1.unsafe_fx_eq_(n3082, 0) !== false) {
-        var if_res1897 = lst3080;
+    var n2112 = M0.length(lst2110);
+    if (M1.unsafe_fx_eq_(n2112, 0) !== false) {
+        var if_res1073 = lst2110;
     } else {
         if (false !== false) {
-            var vec3083 = M0.make_vector(n3082 + M0.ceiling(n3082 / 2));
-            var loop3084 = function(i3085, lst3086) {
+            var vec2113 = M0.make_vector(n2112 + M0.ceiling(n2112 / 2));
+            var loop2114 = function(i2115, lst2116) {
                 if (arguments.length !== 2) {
                     throw $rjs_core.racketContractError("arity mismatch");
                 } else {}
-                if (M0.pair_p(lst3086) !== false) {
-                    var x3087 = M0.car(lst3086);
-                    M1.unsafe_vector_set_bang_(vec3083, i3085, M0.cons(false(x3087), x3087));
-                    var if_res1877 = loop3084(M1.unsafe_fx_plus_(i3085, 1), M0.cdr(lst3086));
+                if (M0.pair_p(lst2116) !== false) {
+                    var x2117 = M0.car(lst2116);
+                    M1.unsafe_vector_set_bang_(vec2113, i2115, M0.cons(false(x2117), x2117));
+                    var if_res1053 = loop2114(M1.unsafe_fx_plus_(i2115, 1), M0.cdr(lst2116));
                 } else {
-                    var if_res1877 = M0.rvoid();
+                    var if_res1053 = M0.rvoid();
                 }
-                return if_res1877;
+                return if_res1053;
             };
-            loop3084(0, lst3080);
-            generic_sort_by_key3023(vec3083, less_than_p3081, n3082, M1.unsafe_car);
-            var loop3088 = function(i3089, r3090) {
+            loop2114(0, lst2110);
+            generic_sort_by_key2053(vec2113, less_than_p2111, n2112, M1.unsafe_car);
+            var loop2118 = function(i2119, r2120) {
                 if (arguments.length !== 2) {
                     throw $rjs_core.racketContractError("arity mismatch");
                 } else {}
-                var i3091 = M1.unsafe_fx_(i3089, 1);
-                if (M1.unsafe_fx_lt_(i3091, 0) !== false) {
-                    var if_res1878 = r3090;
+                var i2121 = M1.unsafe_fx_(i2119, 1);
+                if (M1.unsafe_fx_lt_(i2121, 0) !== false) {
+                    var if_res1054 = r2120;
                 } else {
-                    var if_res1878 = loop3088(i3091, M0.cons(M1.unsafe_cdr(M1.unsafe_vector_ref(vec3083, i3091)), r3090));
+                    var if_res1054 = loop2118(i2121, M0.cons(M1.unsafe_cdr(M1.unsafe_vector_ref(vec2113, i2121)), r2120));
                 }
-                return if_res1878;
+                return if_res1054;
             };
-            var if_res1896 = loop3088(n3082, $rjs_core.Pair.EMPTY);
+            var if_res1072 = loop2118(n2112, $rjs_core.Pair.EMPTY);
         } else {
-            var loop3092 = function(last3093, next3094) {
+            var loop2122 = function(last2123, next2124) {
                 if (arguments.length !== 2) {
                     throw $rjs_core.racketContractError("arity mismatch");
                 } else {}
-                var or_part3095 = M0.null_p(next3094);
-                if (or_part3095 !== false) {
-                    var if_res1881 = or_part3095;
+                var or_part2125 = M0.null_p(next2124);
+                if (or_part2125 !== false) {
+                    var if_res1057 = or_part2125;
                 } else {
                     if (false !== false) {
-                        var if_res1879 = less_than_p3081(false(M1.unsafe_car(next3094)), false(last3093));
+                        var if_res1055 = less_than_p2111(false(M1.unsafe_car(next2124)), false(last2123));
                     } else {
-                        var if_res1879 = less_than_p3081(M1.unsafe_car(next3094), last3093);
+                        var if_res1055 = less_than_p2111(M1.unsafe_car(next2124), last2123);
                     }
-                    if (M0.not(if_res1879) !== false) {
-                        var if_res1880 = loop3092(M1.unsafe_car(next3094), M1.unsafe_cdr(next3094));
+                    if (M0.not(if_res1055) !== false) {
+                        var if_res1056 = loop2122(M1.unsafe_car(next2124), M1.unsafe_cdr(next2124));
                     } else {
-                        var if_res1880 = false;
+                        var if_res1056 = false;
                     }
-                    var if_res1881 = if_res1880;
+                    var if_res1057 = if_res1056;
                 }
-                return if_res1881;
+                return if_res1057;
             };
-            if (loop3092(M0.car(lst3080), M0.cdr(lst3080)) !== false) {
-                var if_res1895 = lst3080;
+            if (loop2122(M0.car(lst2110), M0.cdr(lst2110)) !== false) {
+                var if_res1071 = lst2110;
             } else {
-                if (M1.unsafe_fx_lt__eq_(n3082, 3) !== false) {
-                    if (M1.unsafe_fx_eq_(n3082, 1) !== false) {
-                        var if_res1891 = lst3080;
+                if (M1.unsafe_fx_lt__eq_(n2112, 3) !== false) {
+                    if (M1.unsafe_fx_eq_(n2112, 1) !== false) {
+                        var if_res1067 = lst2110;
                     } else {
-                        if (M1.unsafe_fx_eq_(n3082, 2) !== false) {
-                            var if_res1890 = M0.list(M0.cadr(lst3080), M0.car(lst3080));
+                        if (M1.unsafe_fx_eq_(n2112, 2) !== false) {
+                            var if_res1066 = M0.list(M0.cadr(lst2110), M0.car(lst2110));
                         } else {
-                            var a3096 = M0.car(lst3080);
-                            var b3097 = M0.cadr(lst3080);
-                            var c3098 = M0.caddr(lst3080);
+                            var a2126 = M0.car(lst2110);
+                            var b2127 = M0.cadr(lst2110);
+                            var c2128 = M0.caddr(lst2110);
                             if (false !== false) {
-                                var if_res1882 = less_than_p3081(false(b3097), false(a3096));
+                                var if_res1058 = less_than_p2111(false(b2127), false(a2126));
                             } else {
-                                var if_res1882 = less_than_p3081(b3097, a3096);
+                                var if_res1058 = less_than_p2111(b2127, a2126);
                             }
-                            if (if_res1882 !== false) {
+                            if (if_res1058 !== false) {
                                 if (false !== false) {
-                                    var if_res1883 = less_than_p3081(false(c3098), false(b3097));
+                                    var if_res1059 = less_than_p2111(false(c2128), false(b2127));
                                 } else {
-                                    var if_res1883 = less_than_p3081(c3098, b3097);
+                                    var if_res1059 = less_than_p2111(c2128, b2127);
                                 }
-                                if (if_res1883 !== false) {
-                                    var if_res1886 = M0.list(c3098, b3097, a3096);
+                                if (if_res1059 !== false) {
+                                    var if_res1062 = M0.list(c2128, b2127, a2126);
                                 } else {
                                     if (false !== false) {
-                                        var if_res1884 = less_than_p3081(false(c3098), false(a3096));
+                                        var if_res1060 = less_than_p2111(false(c2128), false(a2126));
                                     } else {
-                                        var if_res1884 = less_than_p3081(c3098, a3096);
+                                        var if_res1060 = less_than_p2111(c2128, a2126);
                                     }
-                                    if (if_res1884 !== false) {
-                                        var if_res1885 = M0.list(b3097, c3098, a3096);
+                                    if (if_res1060 !== false) {
+                                        var if_res1061 = M0.list(b2127, c2128, a2126);
                                     } else {
-                                        var if_res1885 = M0.list(b3097, a3096, c3098);
+                                        var if_res1061 = M0.list(b2127, a2126, c2128);
                                     }
-                                    var if_res1886 = if_res1885;
+                                    var if_res1062 = if_res1061;
                                 }
-                                var if_res1889 = if_res1886;
+                                var if_res1065 = if_res1062;
                             } else {
                                 if (false !== false) {
-                                    var if_res1887 = less_than_p3081(false(c3098), false(a3096));
+                                    var if_res1063 = less_than_p2111(false(c2128), false(a2126));
                                 } else {
-                                    var if_res1887 = less_than_p3081(c3098, a3096);
+                                    var if_res1063 = less_than_p2111(c2128, a2126);
                                 }
-                                if (if_res1887 !== false) {
-                                    var if_res1888 = M0.list(c3098, a3096, b3097);
+                                if (if_res1063 !== false) {
+                                    var if_res1064 = M0.list(c2128, a2126, b2127);
                                 } else {
-                                    var if_res1888 = M0.list(a3096, c3098, b3097);
+                                    var if_res1064 = M0.list(a2126, c2128, b2127);
                                 }
-                                var if_res1889 = if_res1888;
+                                var if_res1065 = if_res1064;
                             }
-                            var if_res1890 = if_res1889;
+                            var if_res1066 = if_res1065;
                         }
-                        var if_res1891 = if_res1890;
+                        var if_res1067 = if_res1066;
                     }
-                    var if_res1894 = if_res1891;
+                    var if_res1070 = if_res1067;
                 } else {
-                    var vec3099 = M0.make_vector(n3082 + M0.ceiling(n3082 / 2));
-                    var loop3100 = function(i3101, lst3102) {
+                    var vec2129 = M0.make_vector(n2112 + M0.ceiling(n2112 / 2));
+                    var loop2130 = function(i2131, lst2132) {
                         if (arguments.length !== 2) {
                             throw $rjs_core.racketContractError("arity mismatch");
                         } else {}
-                        if (M0.pair_p(lst3102) !== false) {
-                            M0.vector_set_bang_(vec3099, i3101, M0.car(lst3102));
-                            var if_res1892 = loop3100(M0.add1(i3101), M0.cdr(lst3102));
+                        if (M0.pair_p(lst2132) !== false) {
+                            M0.vector_set_bang_(vec2129, i2131, M0.car(lst2132));
+                            var if_res1068 = loop2130(M0.add1(i2131), M0.cdr(lst2132));
                         } else {
-                            var if_res1892 = M0.rvoid();
+                            var if_res1068 = M0.rvoid();
                         }
-                        return if_res1892;
+                        return if_res1068;
                     };
-                    loop3100(0, lst3080);
-                    generic_sort2967(vec3099, less_than_p3081, n3082);
-                    var loop3103 = function(i3104, r3105) {
+                    loop2130(0, lst2110);
+                    generic_sort1997(vec2129, less_than_p2111, n2112);
+                    var loop2133 = function(i2134, r2135) {
                         if (arguments.length !== 2) {
                             throw $rjs_core.racketContractError("arity mismatch");
                         } else {}
-                        var i3106 = M0.sub1(i3104);
-                        if (M0.__lt_(i3106, 0) !== false) {
-                            var if_res1893 = r3105;
+                        var i2136 = M0.sub1(i2134);
+                        if (M0.__lt_(i2136, 0) !== false) {
+                            var if_res1069 = r2135;
                         } else {
-                            var if_res1893 = loop3103(i3106, M0.cons(M0.vector_ref(vec3099, i3106), r3105));
+                            var if_res1069 = loop2133(i2136, M0.cons(M0.vector_ref(vec2129, i2136), r2135));
                         }
-                        return if_res1893;
+                        return if_res1069;
                     };
-                    var if_res1894 = loop3103(n3082, $rjs_core.Pair.EMPTY);
+                    var if_res1070 = loop2133(n2112, $rjs_core.Pair.EMPTY);
                 }
-                var if_res1895 = if_res1894;
+                var if_res1071 = if_res1070;
             }
-            var if_res1896 = if_res1895;
+            var if_res1072 = if_res1071;
         }
-        var if_res1897 = if_res1896;
+        var if_res1073 = if_res1072;
     }
-    return if_res1897;
+    return if_res1073;
 };
-var cl1874 = function(lst3107, less_than_p3108, getkey3109) {
+var cl1050 = function(lst2137, less_than_p2138, getkey2139) {
     if (arguments.length !== 3) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    if (getkey3109 !== false) {
-        var if_res1898 = M0.not(M0.eq_p(M0.values, getkey3109));
+    if (getkey2139 !== false) {
+        var if_res1074 = M0.not(M0.eq_p(M0.values, getkey2139));
     } else {
-        var if_res1898 = false;
+        var if_res1074 = false;
     }
-    if (if_res1898 !== false) {
-        var if_res1899 = sort(lst3107, less_than_p3108, getkey3109, false);
+    if (if_res1074 !== false) {
+        var if_res1075 = sort(lst2137, less_than_p2138, getkey2139, false);
     } else {
-        var if_res1899 = sort(lst3107, less_than_p3108);
+        var if_res1075 = sort(lst2137, less_than_p2138);
     }
-    return if_res1899;
+    return if_res1075;
 };
-var cl1875 = function(lst3110, less_than_p3111, getkey3112, cache_keys_p3113) {
+var cl1051 = function(lst2140, less_than_p2141, getkey2142, cache_keys_p2143) {
     if (arguments.length !== 4) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    if (getkey3112 !== false) {
-        var if_res1900 = M0.not(M0.eq_p(M0.values, getkey3112));
+    if (getkey2142 !== false) {
+        var if_res1076 = M0.not(M0.eq_p(M0.values, getkey2142));
     } else {
-        var if_res1900 = false;
+        var if_res1076 = false;
     }
-    if (if_res1900 !== false) {
-        var n3114 = M0.length(lst3110);
-        if (M1.unsafe_fx_eq_(n3114, 0) !== false) {
-            var if_res1921 = lst3110;
+    if (if_res1076 !== false) {
+        var n2144 = M0.length(lst2140);
+        if (M1.unsafe_fx_eq_(n2144, 0) !== false) {
+            var if_res1097 = lst2140;
         } else {
-            if (cache_keys_p3113 !== false) {
-                var vec3115 = M0.make_vector(n3114 + M0.ceiling(n3114 / 2));
-                var loop3116 = function(i3117, lst3118) {
+            if (cache_keys_p2143 !== false) {
+                var vec2145 = M0.make_vector(n2144 + M0.ceiling(n2144 / 2));
+                var loop2146 = function(i2147, lst2148) {
                     if (arguments.length !== 2) {
                         throw $rjs_core.racketContractError("arity mismatch");
                     } else {}
-                    if (M0.pair_p(lst3118) !== false) {
-                        var x3119 = M0.car(lst3118);
-                        M1.unsafe_vector_set_bang_(vec3115, i3117, M0.cons(getkey3112(x3119), x3119));
-                        var if_res1901 = loop3116(M1.unsafe_fx_plus_(i3117, 1), M0.cdr(lst3118));
+                    if (M0.pair_p(lst2148) !== false) {
+                        var x2149 = M0.car(lst2148);
+                        M1.unsafe_vector_set_bang_(vec2145, i2147, M0.cons(getkey2142(x2149), x2149));
+                        var if_res1077 = loop2146(M1.unsafe_fx_plus_(i2147, 1), M0.cdr(lst2148));
                     } else {
-                        var if_res1901 = M0.rvoid();
+                        var if_res1077 = M0.rvoid();
                     }
-                    return if_res1901;
+                    return if_res1077;
                 };
-                loop3116(0, lst3110);
-                generic_sort_by_key3023(vec3115, less_than_p3111, n3114, M1.unsafe_car);
-                var loop3120 = function(i3121, r3122) {
+                loop2146(0, lst2140);
+                generic_sort_by_key2053(vec2145, less_than_p2141, n2144, M1.unsafe_car);
+                var loop2150 = function(i2151, r2152) {
                     if (arguments.length !== 2) {
                         throw $rjs_core.racketContractError("arity mismatch");
                     } else {}
-                    var i3123 = M1.unsafe_fx_(i3121, 1);
-                    if (M1.unsafe_fx_lt_(i3123, 0) !== false) {
-                        var if_res1902 = r3122;
+                    var i2153 = M1.unsafe_fx_(i2151, 1);
+                    if (M1.unsafe_fx_lt_(i2153, 0) !== false) {
+                        var if_res1078 = r2152;
                     } else {
-                        var if_res1902 = loop3120(i3123, M0.cons(M1.unsafe_cdr(M1.unsafe_vector_ref(vec3115, i3123)), r3122));
+                        var if_res1078 = loop2150(i2153, M0.cons(M1.unsafe_cdr(M1.unsafe_vector_ref(vec2145, i2153)), r2152));
                     }
-                    return if_res1902;
+                    return if_res1078;
                 };
-                var if_res1920 = loop3120(n3114, $rjs_core.Pair.EMPTY);
+                var if_res1096 = loop2150(n2144, $rjs_core.Pair.EMPTY);
             } else {
-                var loop3124 = function(last3125, next3126) {
+                var loop2154 = function(last2155, next2156) {
                     if (arguments.length !== 2) {
                         throw $rjs_core.racketContractError("arity mismatch");
                     } else {}
-                    var or_part3127 = M0.null_p(next3126);
-                    if (or_part3127 !== false) {
-                        var if_res1905 = or_part3127;
+                    var or_part2157 = M0.null_p(next2156);
+                    if (or_part2157 !== false) {
+                        var if_res1081 = or_part2157;
                     } else {
-                        if (getkey3112 !== false) {
-                            var if_res1903 = less_than_p3111(getkey3112(M1.unsafe_car(next3126)), getkey3112(last3125));
+                        if (getkey2142 !== false) {
+                            var if_res1079 = less_than_p2141(getkey2142(M1.unsafe_car(next2156)), getkey2142(last2155));
                         } else {
-                            var if_res1903 = less_than_p3111(M1.unsafe_car(next3126), last3125);
+                            var if_res1079 = less_than_p2141(M1.unsafe_car(next2156), last2155);
                         }
-                        if (M0.not(if_res1903) !== false) {
-                            var if_res1904 = loop3124(M1.unsafe_car(next3126), M1.unsafe_cdr(next3126));
+                        if (M0.not(if_res1079) !== false) {
+                            var if_res1080 = loop2154(M1.unsafe_car(next2156), M1.unsafe_cdr(next2156));
                         } else {
-                            var if_res1904 = false;
+                            var if_res1080 = false;
                         }
-                        var if_res1905 = if_res1904;
+                        var if_res1081 = if_res1080;
                     }
-                    return if_res1905;
+                    return if_res1081;
                 };
-                if (loop3124(M0.car(lst3110), M0.cdr(lst3110)) !== false) {
-                    var if_res1919 = lst3110;
+                if (loop2154(M0.car(lst2140), M0.cdr(lst2140)) !== false) {
+                    var if_res1095 = lst2140;
                 } else {
-                    if (M1.unsafe_fx_lt__eq_(n3114, 3) !== false) {
-                        if (M1.unsafe_fx_eq_(n3114, 1) !== false) {
-                            var if_res1915 = lst3110;
+                    if (M1.unsafe_fx_lt__eq_(n2144, 3) !== false) {
+                        if (M1.unsafe_fx_eq_(n2144, 1) !== false) {
+                            var if_res1091 = lst2140;
                         } else {
-                            if (M1.unsafe_fx_eq_(n3114, 2) !== false) {
-                                var if_res1914 = M0.list(M0.cadr(lst3110), M0.car(lst3110));
+                            if (M1.unsafe_fx_eq_(n2144, 2) !== false) {
+                                var if_res1090 = M0.list(M0.cadr(lst2140), M0.car(lst2140));
                             } else {
-                                var a3128 = M0.car(lst3110);
-                                var b3129 = M0.cadr(lst3110);
-                                var c3130 = M0.caddr(lst3110);
-                                if (getkey3112 !== false) {
-                                    var if_res1906 = less_than_p3111(getkey3112(b3129), getkey3112(a3128));
+                                var a2158 = M0.car(lst2140);
+                                var b2159 = M0.cadr(lst2140);
+                                var c2160 = M0.caddr(lst2140);
+                                if (getkey2142 !== false) {
+                                    var if_res1082 = less_than_p2141(getkey2142(b2159), getkey2142(a2158));
                                 } else {
-                                    var if_res1906 = less_than_p3111(b3129, a3128);
+                                    var if_res1082 = less_than_p2141(b2159, a2158);
                                 }
-                                if (if_res1906 !== false) {
-                                    if (getkey3112 !== false) {
-                                        var if_res1907 = less_than_p3111(getkey3112(c3130), getkey3112(b3129));
+                                if (if_res1082 !== false) {
+                                    if (getkey2142 !== false) {
+                                        var if_res1083 = less_than_p2141(getkey2142(c2160), getkey2142(b2159));
                                     } else {
-                                        var if_res1907 = less_than_p3111(c3130, b3129);
+                                        var if_res1083 = less_than_p2141(c2160, b2159);
                                     }
-                                    if (if_res1907 !== false) {
-                                        var if_res1910 = M0.list(c3130, b3129, a3128);
+                                    if (if_res1083 !== false) {
+                                        var if_res1086 = M0.list(c2160, b2159, a2158);
                                     } else {
-                                        if (getkey3112 !== false) {
-                                            var if_res1908 = less_than_p3111(getkey3112(c3130), getkey3112(a3128));
+                                        if (getkey2142 !== false) {
+                                            var if_res1084 = less_than_p2141(getkey2142(c2160), getkey2142(a2158));
                                         } else {
-                                            var if_res1908 = less_than_p3111(c3130, a3128);
+                                            var if_res1084 = less_than_p2141(c2160, a2158);
                                         }
-                                        if (if_res1908 !== false) {
-                                            var if_res1909 = M0.list(b3129, c3130, a3128);
+                                        if (if_res1084 !== false) {
+                                            var if_res1085 = M0.list(b2159, c2160, a2158);
                                         } else {
-                                            var if_res1909 = M0.list(b3129, a3128, c3130);
+                                            var if_res1085 = M0.list(b2159, a2158, c2160);
                                         }
-                                        var if_res1910 = if_res1909;
+                                        var if_res1086 = if_res1085;
                                     }
-                                    var if_res1913 = if_res1910;
+                                    var if_res1089 = if_res1086;
                                 } else {
-                                    if (getkey3112 !== false) {
-                                        var if_res1911 = less_than_p3111(getkey3112(c3130), getkey3112(a3128));
+                                    if (getkey2142 !== false) {
+                                        var if_res1087 = less_than_p2141(getkey2142(c2160), getkey2142(a2158));
                                     } else {
-                                        var if_res1911 = less_than_p3111(c3130, a3128);
+                                        var if_res1087 = less_than_p2141(c2160, a2158);
                                     }
-                                    if (if_res1911 !== false) {
-                                        var if_res1912 = M0.list(c3130, a3128, b3129);
+                                    if (if_res1087 !== false) {
+                                        var if_res1088 = M0.list(c2160, a2158, b2159);
                                     } else {
-                                        var if_res1912 = M0.list(a3128, c3130, b3129);
+                                        var if_res1088 = M0.list(a2158, c2160, b2159);
                                     }
-                                    var if_res1913 = if_res1912;
+                                    var if_res1089 = if_res1088;
                                 }
-                                var if_res1914 = if_res1913;
+                                var if_res1090 = if_res1089;
                             }
-                            var if_res1915 = if_res1914;
+                            var if_res1091 = if_res1090;
                         }
-                        var if_res1918 = if_res1915;
+                        var if_res1094 = if_res1091;
                     } else {
-                        var vec3131 = M0.make_vector(n3114 + M0.ceiling(n3114 / 2));
-                        var loop3132 = function(i3133, lst3134) {
+                        var vec2161 = M0.make_vector(n2144 + M0.ceiling(n2144 / 2));
+                        var loop2162 = function(i2163, lst2164) {
                             if (arguments.length !== 2) {
                                 throw $rjs_core.racketContractError("arity mismatch");
                             } else {}
-                            if (M0.pair_p(lst3134) !== false) {
-                                M0.vector_set_bang_(vec3131, i3133, M0.car(lst3134));
-                                var if_res1916 = loop3132(M0.add1(i3133), M0.cdr(lst3134));
+                            if (M0.pair_p(lst2164) !== false) {
+                                M0.vector_set_bang_(vec2161, i2163, M0.car(lst2164));
+                                var if_res1092 = loop2162(M0.add1(i2163), M0.cdr(lst2164));
                             } else {
-                                var if_res1916 = M0.rvoid();
+                                var if_res1092 = M0.rvoid();
                             }
-                            return if_res1916;
+                            return if_res1092;
                         };
-                        loop3132(0, lst3110);
-                        generic_sort_by_key3023(vec3131, less_than_p3111, n3114, getkey3112);
-                        var loop3135 = function(i3136, r3137) {
+                        loop2162(0, lst2140);
+                        generic_sort_by_key2053(vec2161, less_than_p2141, n2144, getkey2142);
+                        var loop2165 = function(i2166, r2167) {
                             if (arguments.length !== 2) {
                                 throw $rjs_core.racketContractError("arity mismatch");
                             } else {}
-                            var i3138 = M0.sub1(i3136);
-                            if (M0.__lt_(i3138, 0) !== false) {
-                                var if_res1917 = r3137;
+                            var i2168 = M0.sub1(i2166);
+                            if (M0.__lt_(i2168, 0) !== false) {
+                                var if_res1093 = r2167;
                             } else {
-                                var if_res1917 = loop3135(i3138, M0.cons(M0.vector_ref(vec3131, i3138), r3137));
+                                var if_res1093 = loop2165(i2168, M0.cons(M0.vector_ref(vec2161, i2168), r2167));
                             }
-                            return if_res1917;
+                            return if_res1093;
                         };
-                        var if_res1918 = loop3135(n3114, $rjs_core.Pair.EMPTY);
+                        var if_res1094 = loop2165(n2144, $rjs_core.Pair.EMPTY);
                     }
-                    var if_res1919 = if_res1918;
+                    var if_res1095 = if_res1094;
                 }
-                var if_res1920 = if_res1919;
+                var if_res1096 = if_res1095;
             }
-            var if_res1921 = if_res1920;
+            var if_res1097 = if_res1096;
         }
-        var if_res1922 = if_res1921;
+        var if_res1098 = if_res1097;
     } else {
-        var if_res1922 = sort(lst3110, less_than_p3111);
+        var if_res1098 = sort(lst2140, less_than_p2141);
     }
-    return if_res1922;
+    return if_res1098;
 };
-var temp1923 = $rjs_core.attachProcedureArity(function() {
-    var fixed_lam1876 = {
-        '2': cl1873,
-        '3': cl1874,
-        '4': cl1875
+var temp1099 = $rjs_core.attachProcedureArity(function() {
+    var fixed_lam1052 = {
+        '2': cl1049,
+        '3': cl1050,
+        '4': cl1051
     } [arguments.length];
-    if (fixed_lam1876 !== undefined) {
-        return fixed_lam1876.apply(null, arguments);
+    if (fixed_lam1052 !== undefined) {
+        return fixed_lam1052.apply(null, arguments);
     } else {
         return M0.error($rjs_core.UString.make("case-lambda: invalid case"));
     }
 }, [2, 3, 4]);
-var cl1819 = function(vec3139, less_than_p3140, start3141, end3142) {
+var cl995 = function(vec2169, less_than_p2170, start2171, end2172) {
     if (arguments.length !== 4) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    var n3143 = end3142 - start3141;
+    var n2173 = end2172 - start2171;
     if (true !== false) {
-        var if_res1822 = M0.make_vector(n3143);
+        var if_res998 = M0.make_vector(n2173);
     } else {
-        var if_res1822 = vec3139;
+        var if_res998 = vec2169;
     }
-    var dst_vec3144 = if_res1822;
+    var dst_vec2174 = if_res998;
     if (true !== false) {
-        var if_res1823 = 0;
+        var if_res999 = 0;
     } else {
-        var if_res1823 = start3141;
+        var if_res999 = start2171;
     }
-    var dst_start3145 = if_res1823;
-    if (M1.unsafe_fx_eq_(n3143, 0) !== false) {
-        var if_res1844 = M0.rvoid();
+    var dst_start2175 = if_res999;
+    if (M1.unsafe_fx_eq_(n2173, 0) !== false) {
+        var if_res1020 = M0.rvoid();
     } else {
         if (false !== false) {
-            var work_vec3146 = M0.make_vector(n3143 + M0.ceiling(n3143 / 2), true);
-            var loop3147 = function(i3148) {
+            var work_vec2176 = M0.make_vector(n2173 + M0.ceiling(n2173 / 2), true);
+            var loop2177 = function(i2178) {
                 if (arguments.length !== 1) {
                     throw $rjs_core.racketContractError("arity mismatch");
                 } else {}
-                if (M1.unsafe_fx_lt_(i3148, n3143) !== false) {
-                    var x3149 = M1.unsafe_vector_ref(vec3139, M1.unsafe_fx_plus_(i3148, start3141));
-                    M1.unsafe_vector_set_bang_(work_vec3146, i3148, M0.cons(false(x3149), x3149));
-                    var if_res1824 = loop3147(M1.unsafe_fx_plus_(i3148, 1));
+                if (M1.unsafe_fx_lt_(i2178, n2173) !== false) {
+                    var x2179 = M1.unsafe_vector_ref(vec2169, M1.unsafe_fx_plus_(i2178, start2171));
+                    M1.unsafe_vector_set_bang_(work_vec2176, i2178, M0.cons(false(x2179), x2179));
+                    var if_res1000 = loop2177(M1.unsafe_fx_plus_(i2178, 1));
                 } else {
-                    var if_res1824 = M0.rvoid();
+                    var if_res1000 = M0.rvoid();
                 }
-                return if_res1824;
+                return if_res1000;
             };
-            loop3147(0);
-            generic_sort_by_key3023(work_vec3146, less_than_p3140, n3143, M1.unsafe_car);
-            var loop3150 = function(i3151) {
+            loop2177(0);
+            generic_sort_by_key2053(work_vec2176, less_than_p2170, n2173, M1.unsafe_car);
+            var loop2180 = function(i2181) {
                 if (arguments.length !== 1) {
                     throw $rjs_core.racketContractError("arity mismatch");
                 } else {}
-                if (M1.unsafe_fx_lt_(i3151, n3143) !== false) {
-                    M1.unsafe_vector_set_bang_(dst_vec3144, M1.unsafe_fx_plus_(i3151, dst_start3145), M1.unsafe_cdr(M1.unsafe_vector_ref(work_vec3146, i3151)));
-                    var if_res1825 = loop3150(M1.unsafe_fx_plus_(i3151, 1));
+                if (M1.unsafe_fx_lt_(i2181, n2173) !== false) {
+                    M1.unsafe_vector_set_bang_(dst_vec2174, M1.unsafe_fx_plus_(i2181, dst_start2175), M1.unsafe_cdr(M1.unsafe_vector_ref(work_vec2176, i2181)));
+                    var if_res1001 = loop2180(M1.unsafe_fx_plus_(i2181, 1));
                 } else {
-                    var if_res1825 = M0.rvoid();
+                    var if_res1001 = M0.rvoid();
                 }
-                return if_res1825;
+                return if_res1001;
             };
-            var if_res1843 = loop3150(0);
+            var if_res1019 = loop2180(0);
         } else {
-            var loop3152 = function(prev_val3153, next_index3154) {
+            var loop2182 = function(prev_val2183, next_index2184) {
                 if (arguments.length !== 2) {
                     throw $rjs_core.racketContractError("arity mismatch");
                 } else {}
-                var or_part3155 = M1.unsafe_fx_eq_(next_index3154, end3142);
-                if (or_part3155 !== false) {
-                    var if_res1828 = or_part3155;
+                var or_part2185 = M1.unsafe_fx_eq_(next_index2184, end2172);
+                if (or_part2185 !== false) {
+                    var if_res1004 = or_part2185;
                 } else {
-                    var next_val3156 = M1.unsafe_vector_ref(vec3139, next_index3154);
+                    var next_val2186 = M1.unsafe_vector_ref(vec2169, next_index2184);
                     if (false !== false) {
-                        var if_res1826 = less_than_p3140(false(next_val3156), false(prev_val3153));
+                        var if_res1002 = less_than_p2170(false(next_val2186), false(prev_val2183));
                     } else {
-                        var if_res1826 = less_than_p3140(next_val3156, prev_val3153);
+                        var if_res1002 = less_than_p2170(next_val2186, prev_val2183);
                     }
-                    if (M0.not(if_res1826) !== false) {
-                        var if_res1827 = loop3152(next_val3156, M1.unsafe_fx_plus_(next_index3154, 1));
+                    if (M0.not(if_res1002) !== false) {
+                        var if_res1003 = loop2182(next_val2186, M1.unsafe_fx_plus_(next_index2184, 1));
                     } else {
-                        var if_res1827 = false;
+                        var if_res1003 = false;
                     }
-                    var if_res1828 = if_res1827;
+                    var if_res1004 = if_res1003;
                 }
-                return if_res1828;
+                return if_res1004;
             };
-            if (loop3152(M1.unsafe_vector_ref(vec3139, start3141), M1.unsafe_fx_plus_(start3141, 1)) !== false) {
+            if (loop2182(M1.unsafe_vector_ref(vec2169, start2171), M1.unsafe_fx_plus_(start2171, 1)) !== false) {
                 if (true !== false) {
-                    var if_res1829 = M0.vector_copy_bang_(dst_vec3144, dst_start3145, vec3139, start3141, end3142);
+                    var if_res1005 = M0.vector_copy_bang_(dst_vec2174, dst_start2175, vec2169, start2171, end2172);
                 } else {
-                    var if_res1829 = M0.rvoid();
+                    var if_res1005 = M0.rvoid();
                 }
-                var if_res1842 = if_res1829;
+                var if_res1018 = if_res1005;
             } else {
-                if (M1.unsafe_fx_lt__eq_(n3143, 3) !== false) {
+                if (M1.unsafe_fx_lt__eq_(n2173, 3) !== false) {
                     if (true !== false) {
-                        var if_res1830 = M0.vector_copy_bang_(dst_vec3144, dst_start3145, vec3139, start3141, end3142);
+                        var if_res1006 = M0.vector_copy_bang_(dst_vec2174, dst_start2175, vec2169, start2171, end2172);
                     } else {
-                        var if_res1830 = M0.rvoid();
+                        var if_res1006 = M0.rvoid();
                     }
-                    if_res1830;
-                    if (M1.unsafe_fx_eq_(n3143, 1) !== false) {
-                        var if_res1840 = M0.rvoid();
+                    if_res1006;
+                    if (M1.unsafe_fx_eq_(n2173, 1) !== false) {
+                        var if_res1016 = M0.rvoid();
                     } else {
-                        if (M1.unsafe_fx_eq_(n3143, 2) !== false) {
-                            var tmp3157 = M1.unsafe_vector_ref(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 0));
-                            M1.unsafe_vector_set_bang_(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 0), M1.unsafe_vector_ref(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 1)));
-                            var if_res1839 = M1.unsafe_vector_set_bang_(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 1), tmp3157);
+                        if (M1.unsafe_fx_eq_(n2173, 2) !== false) {
+                            var tmp2187 = M1.unsafe_vector_ref(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 0));
+                            M1.unsafe_vector_set_bang_(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 0), M1.unsafe_vector_ref(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 1)));
+                            var if_res1015 = M1.unsafe_vector_set_bang_(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 1), tmp2187);
                         } else {
-                            var a3158 = M1.unsafe_vector_ref(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 0));
-                            var b3159 = M1.unsafe_vector_ref(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 1));
-                            var c3160 = M1.unsafe_vector_ref(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 2));
+                            var a2188 = M1.unsafe_vector_ref(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 0));
+                            var b2189 = M1.unsafe_vector_ref(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 1));
+                            var c2190 = M1.unsafe_vector_ref(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 2));
                             if (false !== false) {
-                                var if_res1831 = less_than_p3140(false(b3159), false(a3158));
+                                var if_res1007 = less_than_p2170(false(b2189), false(a2188));
                             } else {
-                                var if_res1831 = less_than_p3140(b3159, a3158);
+                                var if_res1007 = less_than_p2170(b2189, a2188);
                             }
-                            if (if_res1831 !== false) {
+                            if (if_res1007 !== false) {
                                 if (false !== false) {
-                                    var if_res1832 = less_than_p3140(false(c3160), false(b3159));
+                                    var if_res1008 = less_than_p2170(false(c2190), false(b2189));
                                 } else {
-                                    var if_res1832 = less_than_p3140(c3160, b3159);
+                                    var if_res1008 = less_than_p2170(c2190, b2189);
                                 }
-                                if (if_res1832 !== false) {
-                                    M1.unsafe_vector_set_bang_(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 0), c3160);
-                                    var if_res1835 = M1.unsafe_vector_set_bang_(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 2), a3158);
+                                if (if_res1008 !== false) {
+                                    M1.unsafe_vector_set_bang_(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 0), c2190);
+                                    var if_res1011 = M1.unsafe_vector_set_bang_(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 2), a2188);
                                 } else {
                                     if (false !== false) {
-                                        var if_res1833 = less_than_p3140(false(c3160), false(a3158));
+                                        var if_res1009 = less_than_p2170(false(c2190), false(a2188));
                                     } else {
-                                        var if_res1833 = less_than_p3140(c3160, a3158);
+                                        var if_res1009 = less_than_p2170(c2190, a2188);
                                     }
-                                    if (if_res1833 !== false) {
-                                        M1.unsafe_vector_set_bang_(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 0), b3159);
-                                        M1.unsafe_vector_set_bang_(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 1), c3160);
-                                        var if_res1834 = M1.unsafe_vector_set_bang_(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 2), a3158);
+                                    if (if_res1009 !== false) {
+                                        M1.unsafe_vector_set_bang_(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 0), b2189);
+                                        M1.unsafe_vector_set_bang_(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 1), c2190);
+                                        var if_res1010 = M1.unsafe_vector_set_bang_(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 2), a2188);
                                     } else {
-                                        M1.unsafe_vector_set_bang_(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 0), b3159);
-                                        var if_res1834 = M1.unsafe_vector_set_bang_(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 1), a3158);
+                                        M1.unsafe_vector_set_bang_(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 0), b2189);
+                                        var if_res1010 = M1.unsafe_vector_set_bang_(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 1), a2188);
                                     }
-                                    var if_res1835 = if_res1834;
+                                    var if_res1011 = if_res1010;
                                 }
-                                var if_res1838 = if_res1835;
+                                var if_res1014 = if_res1011;
                             } else {
                                 if (false !== false) {
-                                    var if_res1836 = less_than_p3140(false(c3160), false(a3158));
+                                    var if_res1012 = less_than_p2170(false(c2190), false(a2188));
                                 } else {
-                                    var if_res1836 = less_than_p3140(c3160, a3158);
+                                    var if_res1012 = less_than_p2170(c2190, a2188);
                                 }
-                                if (if_res1836 !== false) {
-                                    M1.unsafe_vector_set_bang_(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 0), c3160);
-                                    M1.unsafe_vector_set_bang_(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 1), a3158);
-                                    var if_res1837 = M1.unsafe_vector_set_bang_(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 2), b3159);
+                                if (if_res1012 !== false) {
+                                    M1.unsafe_vector_set_bang_(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 0), c2190);
+                                    M1.unsafe_vector_set_bang_(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 1), a2188);
+                                    var if_res1013 = M1.unsafe_vector_set_bang_(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 2), b2189);
                                 } else {
-                                    M1.unsafe_vector_set_bang_(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 1), c3160);
-                                    var if_res1837 = M1.unsafe_vector_set_bang_(dst_vec3144, M1.unsafe_fx_plus_(dst_start3145, 2), b3159);
+                                    M1.unsafe_vector_set_bang_(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 1), c2190);
+                                    var if_res1013 = M1.unsafe_vector_set_bang_(dst_vec2174, M1.unsafe_fx_plus_(dst_start2175, 2), b2189);
                                 }
-                                var if_res1838 = if_res1837;
+                                var if_res1014 = if_res1013;
                             }
-                            var if_res1839 = if_res1838;
+                            var if_res1015 = if_res1014;
                         }
-                        var if_res1840 = if_res1839;
+                        var if_res1016 = if_res1015;
                     }
-                    var if_res1841 = if_res1840;
+                    var if_res1017 = if_res1016;
                 } else {
-                    var work_vec3161 = M0.make_vector(n3143 + M0.ceiling(n3143 / 2), false);
-                    M0.vector_copy_bang_(work_vec3161, 0, vec3139, start3141, end3142);
-                    generic_sort2967(work_vec3161, less_than_p3140, n3143);
-                    var if_res1841 = M0.vector_copy_bang_(dst_vec3144, dst_start3145, work_vec3161, 0, n3143);
+                    var work_vec2191 = M0.make_vector(n2173 + M0.ceiling(n2173 / 2), false);
+                    M0.vector_copy_bang_(work_vec2191, 0, vec2169, start2171, end2172);
+                    generic_sort1997(work_vec2191, less_than_p2170, n2173);
+                    var if_res1017 = M0.vector_copy_bang_(dst_vec2174, dst_start2175, work_vec2191, 0, n2173);
                 }
-                var if_res1842 = if_res1841;
+                var if_res1018 = if_res1017;
             }
-            var if_res1843 = if_res1842;
+            var if_res1019 = if_res1018;
         }
-        var if_res1844 = if_res1843;
+        var if_res1020 = if_res1019;
     }
-    if_res1844;
+    if_res1020;
     if (true !== false) {
-        var if_res1845 = dst_vec3144;
+        var if_res1021 = dst_vec2174;
     } else {
-        var if_res1845 = M0.rvoid();
+        var if_res1021 = M0.rvoid();
     }
-    return if_res1845;
+    return if_res1021;
 };
-var cl1820 = function(vec3162, less_than_p3163, start3164, end3165, getkey3166, cache_keys_p3167) {
+var cl996 = function(vec2192, less_than_p2193, start2194, end2195, getkey2196, cache_keys_p2197) {
     if (arguments.length !== 6) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    if (getkey3166 !== false) {
-        var if_res1846 = M0.not(M0.eq_p(M0.values, getkey3166));
+    if (getkey2196 !== false) {
+        var if_res1022 = M0.not(M0.eq_p(M0.values, getkey2196));
     } else {
-        var if_res1846 = false;
+        var if_res1022 = false;
     }
-    if (if_res1846 !== false) {
-        var n3168 = end3165 - start3164;
+    if (if_res1022 !== false) {
+        var n2198 = end2195 - start2194;
         if (true !== false) {
-            var if_res1847 = M0.make_vector(n3168);
+            var if_res1023 = M0.make_vector(n2198);
         } else {
-            var if_res1847 = vec3162;
+            var if_res1023 = vec2192;
         }
-        var dst_vec3169 = if_res1847;
+        var dst_vec2199 = if_res1023;
         if (true !== false) {
-            var if_res1848 = 0;
+            var if_res1024 = 0;
         } else {
-            var if_res1848 = start3164;
+            var if_res1024 = start2194;
         }
-        var dst_start3170 = if_res1848;
-        if (M1.unsafe_fx_eq_(n3168, 0) !== false) {
-            var if_res1869 = M0.rvoid();
+        var dst_start2200 = if_res1024;
+        if (M1.unsafe_fx_eq_(n2198, 0) !== false) {
+            var if_res1045 = M0.rvoid();
         } else {
-            if (cache_keys_p3167 !== false) {
-                var work_vec3171 = M0.make_vector(n3168 + M0.ceiling(n3168 / 2), true);
-                var loop3172 = function(i3173) {
+            if (cache_keys_p2197 !== false) {
+                var work_vec2201 = M0.make_vector(n2198 + M0.ceiling(n2198 / 2), true);
+                var loop2202 = function(i2203) {
                     if (arguments.length !== 1) {
                         throw $rjs_core.racketContractError("arity mismatch");
                     } else {}
-                    if (M1.unsafe_fx_lt_(i3173, n3168) !== false) {
-                        var x3174 = M1.unsafe_vector_ref(vec3162, M1.unsafe_fx_plus_(i3173, start3164));
-                        M1.unsafe_vector_set_bang_(work_vec3171, i3173, M0.cons(getkey3166(x3174), x3174));
-                        var if_res1849 = loop3172(M1.unsafe_fx_plus_(i3173, 1));
+                    if (M1.unsafe_fx_lt_(i2203, n2198) !== false) {
+                        var x2204 = M1.unsafe_vector_ref(vec2192, M1.unsafe_fx_plus_(i2203, start2194));
+                        M1.unsafe_vector_set_bang_(work_vec2201, i2203, M0.cons(getkey2196(x2204), x2204));
+                        var if_res1025 = loop2202(M1.unsafe_fx_plus_(i2203, 1));
                     } else {
-                        var if_res1849 = M0.rvoid();
+                        var if_res1025 = M0.rvoid();
                     }
-                    return if_res1849;
+                    return if_res1025;
                 };
-                loop3172(0);
-                generic_sort_by_key3023(work_vec3171, less_than_p3163, n3168, M1.unsafe_car);
-                var loop3175 = function(i3176) {
+                loop2202(0);
+                generic_sort_by_key2053(work_vec2201, less_than_p2193, n2198, M1.unsafe_car);
+                var loop2205 = function(i2206) {
                     if (arguments.length !== 1) {
                         throw $rjs_core.racketContractError("arity mismatch");
                     } else {}
-                    if (M1.unsafe_fx_lt_(i3176, n3168) !== false) {
-                        M1.unsafe_vector_set_bang_(dst_vec3169, M1.unsafe_fx_plus_(i3176, dst_start3170), M1.unsafe_cdr(M1.unsafe_vector_ref(work_vec3171, i3176)));
-                        var if_res1850 = loop3175(M1.unsafe_fx_plus_(i3176, 1));
+                    if (M1.unsafe_fx_lt_(i2206, n2198) !== false) {
+                        M1.unsafe_vector_set_bang_(dst_vec2199, M1.unsafe_fx_plus_(i2206, dst_start2200), M1.unsafe_cdr(M1.unsafe_vector_ref(work_vec2201, i2206)));
+                        var if_res1026 = loop2205(M1.unsafe_fx_plus_(i2206, 1));
                     } else {
-                        var if_res1850 = M0.rvoid();
+                        var if_res1026 = M0.rvoid();
                     }
-                    return if_res1850;
+                    return if_res1026;
                 };
-                var if_res1868 = loop3175(0);
+                var if_res1044 = loop2205(0);
             } else {
-                var loop3177 = function(prev_val3178, next_index3179) {
+                var loop2207 = function(prev_val2208, next_index2209) {
                     if (arguments.length !== 2) {
                         throw $rjs_core.racketContractError("arity mismatch");
                     } else {}
-                    var or_part3180 = M1.unsafe_fx_eq_(next_index3179, end3165);
-                    if (or_part3180 !== false) {
-                        var if_res1853 = or_part3180;
+                    var or_part2210 = M1.unsafe_fx_eq_(next_index2209, end2195);
+                    if (or_part2210 !== false) {
+                        var if_res1029 = or_part2210;
                     } else {
-                        var next_val3181 = M1.unsafe_vector_ref(vec3162, next_index3179);
-                        if (getkey3166 !== false) {
-                            var if_res1851 = less_than_p3163(getkey3166(next_val3181), getkey3166(prev_val3178));
+                        var next_val2211 = M1.unsafe_vector_ref(vec2192, next_index2209);
+                        if (getkey2196 !== false) {
+                            var if_res1027 = less_than_p2193(getkey2196(next_val2211), getkey2196(prev_val2208));
                         } else {
-                            var if_res1851 = less_than_p3163(next_val3181, prev_val3178);
+                            var if_res1027 = less_than_p2193(next_val2211, prev_val2208);
                         }
-                        if (M0.not(if_res1851) !== false) {
-                            var if_res1852 = loop3177(next_val3181, M1.unsafe_fx_plus_(next_index3179, 1));
+                        if (M0.not(if_res1027) !== false) {
+                            var if_res1028 = loop2207(next_val2211, M1.unsafe_fx_plus_(next_index2209, 1));
                         } else {
-                            var if_res1852 = false;
+                            var if_res1028 = false;
                         }
-                        var if_res1853 = if_res1852;
+                        var if_res1029 = if_res1028;
                     }
-                    return if_res1853;
+                    return if_res1029;
                 };
-                if (loop3177(M1.unsafe_vector_ref(vec3162, start3164), M1.unsafe_fx_plus_(start3164, 1)) !== false) {
+                if (loop2207(M1.unsafe_vector_ref(vec2192, start2194), M1.unsafe_fx_plus_(start2194, 1)) !== false) {
                     if (true !== false) {
-                        var if_res1854 = M0.vector_copy_bang_(dst_vec3169, dst_start3170, vec3162, start3164, end3165);
+                        var if_res1030 = M0.vector_copy_bang_(dst_vec2199, dst_start2200, vec2192, start2194, end2195);
                     } else {
-                        var if_res1854 = M0.rvoid();
+                        var if_res1030 = M0.rvoid();
                     }
-                    var if_res1867 = if_res1854;
+                    var if_res1043 = if_res1030;
                 } else {
-                    if (M1.unsafe_fx_lt__eq_(n3168, 3) !== false) {
+                    if (M1.unsafe_fx_lt__eq_(n2198, 3) !== false) {
                         if (true !== false) {
-                            var if_res1855 = M0.vector_copy_bang_(dst_vec3169, dst_start3170, vec3162, start3164, end3165);
+                            var if_res1031 = M0.vector_copy_bang_(dst_vec2199, dst_start2200, vec2192, start2194, end2195);
                         } else {
-                            var if_res1855 = M0.rvoid();
+                            var if_res1031 = M0.rvoid();
                         }
-                        if_res1855;
-                        if (M1.unsafe_fx_eq_(n3168, 1) !== false) {
-                            var if_res1865 = M0.rvoid();
+                        if_res1031;
+                        if (M1.unsafe_fx_eq_(n2198, 1) !== false) {
+                            var if_res1041 = M0.rvoid();
                         } else {
-                            if (M1.unsafe_fx_eq_(n3168, 2) !== false) {
-                                var tmp3182 = M1.unsafe_vector_ref(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 0));
-                                M1.unsafe_vector_set_bang_(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 0), M1.unsafe_vector_ref(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 1)));
-                                var if_res1864 = M1.unsafe_vector_set_bang_(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 1), tmp3182);
+                            if (M1.unsafe_fx_eq_(n2198, 2) !== false) {
+                                var tmp2212 = M1.unsafe_vector_ref(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 0));
+                                M1.unsafe_vector_set_bang_(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 0), M1.unsafe_vector_ref(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 1)));
+                                var if_res1040 = M1.unsafe_vector_set_bang_(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 1), tmp2212);
                             } else {
-                                var a3183 = M1.unsafe_vector_ref(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 0));
-                                var b3184 = M1.unsafe_vector_ref(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 1));
-                                var c3185 = M1.unsafe_vector_ref(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 2));
-                                if (getkey3166 !== false) {
-                                    var if_res1856 = less_than_p3163(getkey3166(b3184), getkey3166(a3183));
+                                var a2213 = M1.unsafe_vector_ref(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 0));
+                                var b2214 = M1.unsafe_vector_ref(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 1));
+                                var c2215 = M1.unsafe_vector_ref(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 2));
+                                if (getkey2196 !== false) {
+                                    var if_res1032 = less_than_p2193(getkey2196(b2214), getkey2196(a2213));
                                 } else {
-                                    var if_res1856 = less_than_p3163(b3184, a3183);
+                                    var if_res1032 = less_than_p2193(b2214, a2213);
                                 }
-                                if (if_res1856 !== false) {
-                                    if (getkey3166 !== false) {
-                                        var if_res1857 = less_than_p3163(getkey3166(c3185), getkey3166(b3184));
+                                if (if_res1032 !== false) {
+                                    if (getkey2196 !== false) {
+                                        var if_res1033 = less_than_p2193(getkey2196(c2215), getkey2196(b2214));
                                     } else {
-                                        var if_res1857 = less_than_p3163(c3185, b3184);
+                                        var if_res1033 = less_than_p2193(c2215, b2214);
                                     }
-                                    if (if_res1857 !== false) {
-                                        M1.unsafe_vector_set_bang_(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 0), c3185);
-                                        var if_res1860 = M1.unsafe_vector_set_bang_(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 2), a3183);
+                                    if (if_res1033 !== false) {
+                                        M1.unsafe_vector_set_bang_(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 0), c2215);
+                                        var if_res1036 = M1.unsafe_vector_set_bang_(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 2), a2213);
                                     } else {
-                                        if (getkey3166 !== false) {
-                                            var if_res1858 = less_than_p3163(getkey3166(c3185), getkey3166(a3183));
+                                        if (getkey2196 !== false) {
+                                            var if_res1034 = less_than_p2193(getkey2196(c2215), getkey2196(a2213));
                                         } else {
-                                            var if_res1858 = less_than_p3163(c3185, a3183);
+                                            var if_res1034 = less_than_p2193(c2215, a2213);
                                         }
-                                        if (if_res1858 !== false) {
-                                            M1.unsafe_vector_set_bang_(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 0), b3184);
-                                            M1.unsafe_vector_set_bang_(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 1), c3185);
-                                            var if_res1859 = M1.unsafe_vector_set_bang_(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 2), a3183);
+                                        if (if_res1034 !== false) {
+                                            M1.unsafe_vector_set_bang_(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 0), b2214);
+                                            M1.unsafe_vector_set_bang_(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 1), c2215);
+                                            var if_res1035 = M1.unsafe_vector_set_bang_(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 2), a2213);
                                         } else {
-                                            M1.unsafe_vector_set_bang_(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 0), b3184);
-                                            var if_res1859 = M1.unsafe_vector_set_bang_(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 1), a3183);
+                                            M1.unsafe_vector_set_bang_(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 0), b2214);
+                                            var if_res1035 = M1.unsafe_vector_set_bang_(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 1), a2213);
                                         }
-                                        var if_res1860 = if_res1859;
+                                        var if_res1036 = if_res1035;
                                     }
-                                    var if_res1863 = if_res1860;
+                                    var if_res1039 = if_res1036;
                                 } else {
-                                    if (getkey3166 !== false) {
-                                        var if_res1861 = less_than_p3163(getkey3166(c3185), getkey3166(a3183));
+                                    if (getkey2196 !== false) {
+                                        var if_res1037 = less_than_p2193(getkey2196(c2215), getkey2196(a2213));
                                     } else {
-                                        var if_res1861 = less_than_p3163(c3185, a3183);
+                                        var if_res1037 = less_than_p2193(c2215, a2213);
                                     }
-                                    if (if_res1861 !== false) {
-                                        M1.unsafe_vector_set_bang_(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 0), c3185);
-                                        M1.unsafe_vector_set_bang_(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 1), a3183);
-                                        var if_res1862 = M1.unsafe_vector_set_bang_(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 2), b3184);
+                                    if (if_res1037 !== false) {
+                                        M1.unsafe_vector_set_bang_(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 0), c2215);
+                                        M1.unsafe_vector_set_bang_(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 1), a2213);
+                                        var if_res1038 = M1.unsafe_vector_set_bang_(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 2), b2214);
                                     } else {
-                                        M1.unsafe_vector_set_bang_(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 1), c3185);
-                                        var if_res1862 = M1.unsafe_vector_set_bang_(dst_vec3169, M1.unsafe_fx_plus_(dst_start3170, 2), b3184);
+                                        M1.unsafe_vector_set_bang_(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 1), c2215);
+                                        var if_res1038 = M1.unsafe_vector_set_bang_(dst_vec2199, M1.unsafe_fx_plus_(dst_start2200, 2), b2214);
                                     }
-                                    var if_res1863 = if_res1862;
+                                    var if_res1039 = if_res1038;
                                 }
-                                var if_res1864 = if_res1863;
+                                var if_res1040 = if_res1039;
                             }
-                            var if_res1865 = if_res1864;
+                            var if_res1041 = if_res1040;
                         }
-                        var if_res1866 = if_res1865;
+                        var if_res1042 = if_res1041;
                     } else {
-                        var work_vec3186 = M0.make_vector(n3168 + M0.ceiling(n3168 / 2), false);
-                        M0.vector_copy_bang_(work_vec3186, 0, vec3162, start3164, end3165);
-                        generic_sort_by_key3023(work_vec3186, less_than_p3163, n3168, getkey3166);
-                        var if_res1866 = M0.vector_copy_bang_(dst_vec3169, dst_start3170, work_vec3186, 0, n3168);
+                        var work_vec2216 = M0.make_vector(n2198 + M0.ceiling(n2198 / 2), false);
+                        M0.vector_copy_bang_(work_vec2216, 0, vec2192, start2194, end2195);
+                        generic_sort_by_key2053(work_vec2216, less_than_p2193, n2198, getkey2196);
+                        var if_res1042 = M0.vector_copy_bang_(dst_vec2199, dst_start2200, work_vec2216, 0, n2198);
                     }
-                    var if_res1867 = if_res1866;
+                    var if_res1043 = if_res1042;
                 }
-                var if_res1868 = if_res1867;
+                var if_res1044 = if_res1043;
             }
-            var if_res1869 = if_res1868;
+            var if_res1045 = if_res1044;
         }
-        if_res1869;
+        if_res1045;
         if (true !== false) {
-            var if_res1870 = dst_vec3169;
+            var if_res1046 = dst_vec2199;
         } else {
-            var if_res1870 = M0.rvoid();
+            var if_res1046 = M0.rvoid();
         }
-        var if_res1871 = if_res1870;
+        var if_res1047 = if_res1046;
     } else {
-        var if_res1871 = vector_sort(vec3162, less_than_p3163, start3164, end3165);
+        var if_res1047 = vector_sort(vec2192, less_than_p2193, start2194, end2195);
     }
-    return if_res1871;
+    return if_res1047;
 };
-var temp1872 = $rjs_core.attachProcedureArity(function() {
-    var fixed_lam1821 = {
-        '4': cl1819,
-        '6': cl1820
+var temp1048 = $rjs_core.attachProcedureArity(function() {
+    var fixed_lam997 = {
+        '4': cl995,
+        '6': cl996
     } [arguments.length];
-    if (fixed_lam1821 !== undefined) {
-        return fixed_lam1821.apply(null, arguments);
+    if (fixed_lam997 !== undefined) {
+        return fixed_lam997.apply(null, arguments);
     } else {
         return M0.error($rjs_core.UString.make("case-lambda: invalid case"));
     }
 }, [4, 6]);
-var cl1766 = function(vec3187, less_than_p3188, start3189, end3190) {
+var cl942 = function(vec2217, less_than_p2218, start2219, end2220) {
     if (arguments.length !== 4) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    var n3191 = end3190 - start3189;
+    var n2221 = end2220 - start2219;
     if (false !== false) {
-        var if_res1769 = M0.make_vector(n3191);
+        var if_res945 = M0.make_vector(n2221);
     } else {
-        var if_res1769 = vec3187;
+        var if_res945 = vec2217;
     }
-    var dst_vec3192 = if_res1769;
+    var dst_vec2222 = if_res945;
     if (false !== false) {
-        var if_res1770 = 0;
+        var if_res946 = 0;
     } else {
-        var if_res1770 = start3189;
+        var if_res946 = start2219;
     }
-    var dst_start3193 = if_res1770;
-    if (M1.unsafe_fx_eq_(n3191, 0) !== false) {
-        var if_res1791 = M0.rvoid();
+    var dst_start2223 = if_res946;
+    if (M1.unsafe_fx_eq_(n2221, 0) !== false) {
+        var if_res967 = M0.rvoid();
     } else {
         if (false !== false) {
-            var work_vec3194 = M0.make_vector(n3191 + M0.ceiling(n3191 / 2), true);
-            var loop3195 = function(i3196) {
+            var work_vec2224 = M0.make_vector(n2221 + M0.ceiling(n2221 / 2), true);
+            var loop2225 = function(i2226) {
                 if (arguments.length !== 1) {
                     throw $rjs_core.racketContractError("arity mismatch");
                 } else {}
-                if (M1.unsafe_fx_lt_(i3196, n3191) !== false) {
-                    var x3197 = M1.unsafe_vector_ref(vec3187, M1.unsafe_fx_plus_(i3196, start3189));
-                    M1.unsafe_vector_set_bang_(work_vec3194, i3196, M0.cons(false(x3197), x3197));
-                    var if_res1771 = loop3195(M1.unsafe_fx_plus_(i3196, 1));
+                if (M1.unsafe_fx_lt_(i2226, n2221) !== false) {
+                    var x2227 = M1.unsafe_vector_ref(vec2217, M1.unsafe_fx_plus_(i2226, start2219));
+                    M1.unsafe_vector_set_bang_(work_vec2224, i2226, M0.cons(false(x2227), x2227));
+                    var if_res947 = loop2225(M1.unsafe_fx_plus_(i2226, 1));
                 } else {
-                    var if_res1771 = M0.rvoid();
+                    var if_res947 = M0.rvoid();
                 }
-                return if_res1771;
+                return if_res947;
             };
-            loop3195(0);
-            generic_sort_by_key3023(work_vec3194, less_than_p3188, n3191, M1.unsafe_car);
-            var loop3198 = function(i3199) {
+            loop2225(0);
+            generic_sort_by_key2053(work_vec2224, less_than_p2218, n2221, M1.unsafe_car);
+            var loop2228 = function(i2229) {
                 if (arguments.length !== 1) {
                     throw $rjs_core.racketContractError("arity mismatch");
                 } else {}
-                if (M1.unsafe_fx_lt_(i3199, n3191) !== false) {
-                    M1.unsafe_vector_set_bang_(dst_vec3192, M1.unsafe_fx_plus_(i3199, dst_start3193), M1.unsafe_cdr(M1.unsafe_vector_ref(work_vec3194, i3199)));
-                    var if_res1772 = loop3198(M1.unsafe_fx_plus_(i3199, 1));
+                if (M1.unsafe_fx_lt_(i2229, n2221) !== false) {
+                    M1.unsafe_vector_set_bang_(dst_vec2222, M1.unsafe_fx_plus_(i2229, dst_start2223), M1.unsafe_cdr(M1.unsafe_vector_ref(work_vec2224, i2229)));
+                    var if_res948 = loop2228(M1.unsafe_fx_plus_(i2229, 1));
                 } else {
-                    var if_res1772 = M0.rvoid();
+                    var if_res948 = M0.rvoid();
                 }
-                return if_res1772;
+                return if_res948;
             };
-            var if_res1790 = loop3198(0);
+            var if_res966 = loop2228(0);
         } else {
-            var loop3200 = function(prev_val3201, next_index3202) {
+            var loop2230 = function(prev_val2231, next_index2232) {
                 if (arguments.length !== 2) {
                     throw $rjs_core.racketContractError("arity mismatch");
                 } else {}
-                var or_part3203 = M1.unsafe_fx_eq_(next_index3202, end3190);
-                if (or_part3203 !== false) {
-                    var if_res1775 = or_part3203;
+                var or_part2233 = M1.unsafe_fx_eq_(next_index2232, end2220);
+                if (or_part2233 !== false) {
+                    var if_res951 = or_part2233;
                 } else {
-                    var next_val3204 = M1.unsafe_vector_ref(vec3187, next_index3202);
+                    var next_val2234 = M1.unsafe_vector_ref(vec2217, next_index2232);
                     if (false !== false) {
-                        var if_res1773 = less_than_p3188(false(next_val3204), false(prev_val3201));
+                        var if_res949 = less_than_p2218(false(next_val2234), false(prev_val2231));
                     } else {
-                        var if_res1773 = less_than_p3188(next_val3204, prev_val3201);
+                        var if_res949 = less_than_p2218(next_val2234, prev_val2231);
                     }
-                    if (M0.not(if_res1773) !== false) {
-                        var if_res1774 = loop3200(next_val3204, M1.unsafe_fx_plus_(next_index3202, 1));
+                    if (M0.not(if_res949) !== false) {
+                        var if_res950 = loop2230(next_val2234, M1.unsafe_fx_plus_(next_index2232, 1));
                     } else {
-                        var if_res1774 = false;
+                        var if_res950 = false;
                     }
-                    var if_res1775 = if_res1774;
+                    var if_res951 = if_res950;
                 }
-                return if_res1775;
+                return if_res951;
             };
-            if (loop3200(M1.unsafe_vector_ref(vec3187, start3189), M1.unsafe_fx_plus_(start3189, 1)) !== false) {
+            if (loop2230(M1.unsafe_vector_ref(vec2217, start2219), M1.unsafe_fx_plus_(start2219, 1)) !== false) {
                 if (false !== false) {
-                    var if_res1776 = M0.vector_copy_bang_(dst_vec3192, dst_start3193, vec3187, start3189, end3190);
+                    var if_res952 = M0.vector_copy_bang_(dst_vec2222, dst_start2223, vec2217, start2219, end2220);
                 } else {
-                    var if_res1776 = M0.rvoid();
+                    var if_res952 = M0.rvoid();
                 }
-                var if_res1789 = if_res1776;
+                var if_res965 = if_res952;
             } else {
-                if (M1.unsafe_fx_lt__eq_(n3191, 3) !== false) {
+                if (M1.unsafe_fx_lt__eq_(n2221, 3) !== false) {
                     if (false !== false) {
-                        var if_res1777 = M0.vector_copy_bang_(dst_vec3192, dst_start3193, vec3187, start3189, end3190);
+                        var if_res953 = M0.vector_copy_bang_(dst_vec2222, dst_start2223, vec2217, start2219, end2220);
                     } else {
-                        var if_res1777 = M0.rvoid();
+                        var if_res953 = M0.rvoid();
                     }
-                    if_res1777;
-                    if (M1.unsafe_fx_eq_(n3191, 1) !== false) {
-                        var if_res1787 = M0.rvoid();
+                    if_res953;
+                    if (M1.unsafe_fx_eq_(n2221, 1) !== false) {
+                        var if_res963 = M0.rvoid();
                     } else {
-                        if (M1.unsafe_fx_eq_(n3191, 2) !== false) {
-                            var tmp3205 = M1.unsafe_vector_ref(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 0));
-                            M1.unsafe_vector_set_bang_(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 0), M1.unsafe_vector_ref(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 1)));
-                            var if_res1786 = M1.unsafe_vector_set_bang_(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 1), tmp3205);
+                        if (M1.unsafe_fx_eq_(n2221, 2) !== false) {
+                            var tmp2235 = M1.unsafe_vector_ref(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 0));
+                            M1.unsafe_vector_set_bang_(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 0), M1.unsafe_vector_ref(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 1)));
+                            var if_res962 = M1.unsafe_vector_set_bang_(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 1), tmp2235);
                         } else {
-                            var a3206 = M1.unsafe_vector_ref(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 0));
-                            var b3207 = M1.unsafe_vector_ref(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 1));
-                            var c3208 = M1.unsafe_vector_ref(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 2));
+                            var a2236 = M1.unsafe_vector_ref(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 0));
+                            var b2237 = M1.unsafe_vector_ref(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 1));
+                            var c2238 = M1.unsafe_vector_ref(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 2));
                             if (false !== false) {
-                                var if_res1778 = less_than_p3188(false(b3207), false(a3206));
+                                var if_res954 = less_than_p2218(false(b2237), false(a2236));
                             } else {
-                                var if_res1778 = less_than_p3188(b3207, a3206);
+                                var if_res954 = less_than_p2218(b2237, a2236);
                             }
-                            if (if_res1778 !== false) {
+                            if (if_res954 !== false) {
                                 if (false !== false) {
-                                    var if_res1779 = less_than_p3188(false(c3208), false(b3207));
+                                    var if_res955 = less_than_p2218(false(c2238), false(b2237));
                                 } else {
-                                    var if_res1779 = less_than_p3188(c3208, b3207);
+                                    var if_res955 = less_than_p2218(c2238, b2237);
                                 }
-                                if (if_res1779 !== false) {
-                                    M1.unsafe_vector_set_bang_(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 0), c3208);
-                                    var if_res1782 = M1.unsafe_vector_set_bang_(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 2), a3206);
+                                if (if_res955 !== false) {
+                                    M1.unsafe_vector_set_bang_(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 0), c2238);
+                                    var if_res958 = M1.unsafe_vector_set_bang_(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 2), a2236);
                                 } else {
                                     if (false !== false) {
-                                        var if_res1780 = less_than_p3188(false(c3208), false(a3206));
+                                        var if_res956 = less_than_p2218(false(c2238), false(a2236));
                                     } else {
-                                        var if_res1780 = less_than_p3188(c3208, a3206);
+                                        var if_res956 = less_than_p2218(c2238, a2236);
                                     }
-                                    if (if_res1780 !== false) {
-                                        M1.unsafe_vector_set_bang_(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 0), b3207);
-                                        M1.unsafe_vector_set_bang_(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 1), c3208);
-                                        var if_res1781 = M1.unsafe_vector_set_bang_(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 2), a3206);
+                                    if (if_res956 !== false) {
+                                        M1.unsafe_vector_set_bang_(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 0), b2237);
+                                        M1.unsafe_vector_set_bang_(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 1), c2238);
+                                        var if_res957 = M1.unsafe_vector_set_bang_(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 2), a2236);
                                     } else {
-                                        M1.unsafe_vector_set_bang_(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 0), b3207);
-                                        var if_res1781 = M1.unsafe_vector_set_bang_(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 1), a3206);
+                                        M1.unsafe_vector_set_bang_(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 0), b2237);
+                                        var if_res957 = M1.unsafe_vector_set_bang_(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 1), a2236);
                                     }
-                                    var if_res1782 = if_res1781;
+                                    var if_res958 = if_res957;
                                 }
-                                var if_res1785 = if_res1782;
+                                var if_res961 = if_res958;
                             } else {
                                 if (false !== false) {
-                                    var if_res1783 = less_than_p3188(false(c3208), false(a3206));
+                                    var if_res959 = less_than_p2218(false(c2238), false(a2236));
                                 } else {
-                                    var if_res1783 = less_than_p3188(c3208, a3206);
+                                    var if_res959 = less_than_p2218(c2238, a2236);
                                 }
-                                if (if_res1783 !== false) {
-                                    M1.unsafe_vector_set_bang_(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 0), c3208);
-                                    M1.unsafe_vector_set_bang_(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 1), a3206);
-                                    var if_res1784 = M1.unsafe_vector_set_bang_(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 2), b3207);
+                                if (if_res959 !== false) {
+                                    M1.unsafe_vector_set_bang_(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 0), c2238);
+                                    M1.unsafe_vector_set_bang_(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 1), a2236);
+                                    var if_res960 = M1.unsafe_vector_set_bang_(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 2), b2237);
                                 } else {
-                                    M1.unsafe_vector_set_bang_(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 1), c3208);
-                                    var if_res1784 = M1.unsafe_vector_set_bang_(dst_vec3192, M1.unsafe_fx_plus_(dst_start3193, 2), b3207);
+                                    M1.unsafe_vector_set_bang_(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 1), c2238);
+                                    var if_res960 = M1.unsafe_vector_set_bang_(dst_vec2222, M1.unsafe_fx_plus_(dst_start2223, 2), b2237);
                                 }
-                                var if_res1785 = if_res1784;
+                                var if_res961 = if_res960;
                             }
-                            var if_res1786 = if_res1785;
+                            var if_res962 = if_res961;
                         }
-                        var if_res1787 = if_res1786;
+                        var if_res963 = if_res962;
                     }
-                    var if_res1788 = if_res1787;
+                    var if_res964 = if_res963;
                 } else {
-                    var work_vec3209 = M0.make_vector(n3191 + M0.ceiling(n3191 / 2), false);
-                    M0.vector_copy_bang_(work_vec3209, 0, vec3187, start3189, end3190);
-                    generic_sort2967(work_vec3209, less_than_p3188, n3191);
-                    var if_res1788 = M0.vector_copy_bang_(dst_vec3192, dst_start3193, work_vec3209, 0, n3191);
+                    var work_vec2239 = M0.make_vector(n2221 + M0.ceiling(n2221 / 2), false);
+                    M0.vector_copy_bang_(work_vec2239, 0, vec2217, start2219, end2220);
+                    generic_sort1997(work_vec2239, less_than_p2218, n2221);
+                    var if_res964 = M0.vector_copy_bang_(dst_vec2222, dst_start2223, work_vec2239, 0, n2221);
                 }
-                var if_res1789 = if_res1788;
+                var if_res965 = if_res964;
             }
-            var if_res1790 = if_res1789;
+            var if_res966 = if_res965;
         }
-        var if_res1791 = if_res1790;
+        var if_res967 = if_res966;
     }
-    if_res1791;
+    if_res967;
     if (false !== false) {
-        var if_res1792 = dst_vec3192;
+        var if_res968 = dst_vec2222;
     } else {
-        var if_res1792 = M0.rvoid();
+        var if_res968 = M0.rvoid();
     }
-    return if_res1792;
+    return if_res968;
 };
-var cl1767 = function(vec3210, less_than_p3211, start3212, end3213, getkey3214, cache_keys_p3215) {
+var cl943 = function(vec2240, less_than_p2241, start2242, end2243, getkey2244, cache_keys_p2245) {
     if (arguments.length !== 6) {
         throw $rjs_core.racketContractError("arity mismatch");
     } else {}
-    if (getkey3214 !== false) {
-        var if_res1793 = M0.not(M0.eq_p(M0.values, getkey3214));
+    if (getkey2244 !== false) {
+        var if_res969 = M0.not(M0.eq_p(M0.values, getkey2244));
     } else {
-        var if_res1793 = false;
+        var if_res969 = false;
     }
-    if (if_res1793 !== false) {
-        var n3216 = end3213 - start3212;
+    if (if_res969 !== false) {
+        var n2246 = end2243 - start2242;
         if (false !== false) {
-            var if_res1794 = M0.make_vector(n3216);
+            var if_res970 = M0.make_vector(n2246);
         } else {
-            var if_res1794 = vec3210;
+            var if_res970 = vec2240;
         }
-        var dst_vec3217 = if_res1794;
+        var dst_vec2247 = if_res970;
         if (false !== false) {
-            var if_res1795 = 0;
+            var if_res971 = 0;
         } else {
-            var if_res1795 = start3212;
+            var if_res971 = start2242;
         }
-        var dst_start3218 = if_res1795;
-        if (M1.unsafe_fx_eq_(n3216, 0) !== false) {
-            var if_res1816 = M0.rvoid();
+        var dst_start2248 = if_res971;
+        if (M1.unsafe_fx_eq_(n2246, 0) !== false) {
+            var if_res992 = M0.rvoid();
         } else {
-            if (cache_keys_p3215 !== false) {
-                var work_vec3219 = M0.make_vector(n3216 + M0.ceiling(n3216 / 2), true);
-                var loop3220 = function(i3221) {
+            if (cache_keys_p2245 !== false) {
+                var work_vec2249 = M0.make_vector(n2246 + M0.ceiling(n2246 / 2), true);
+                var loop2250 = function(i2251) {
                     if (arguments.length !== 1) {
                         throw $rjs_core.racketContractError("arity mismatch");
                     } else {}
-                    if (M1.unsafe_fx_lt_(i3221, n3216) !== false) {
-                        var x3222 = M1.unsafe_vector_ref(vec3210, M1.unsafe_fx_plus_(i3221, start3212));
-                        M1.unsafe_vector_set_bang_(work_vec3219, i3221, M0.cons(getkey3214(x3222), x3222));
-                        var if_res1796 = loop3220(M1.unsafe_fx_plus_(i3221, 1));
+                    if (M1.unsafe_fx_lt_(i2251, n2246) !== false) {
+                        var x2252 = M1.unsafe_vector_ref(vec2240, M1.unsafe_fx_plus_(i2251, start2242));
+                        M1.unsafe_vector_set_bang_(work_vec2249, i2251, M0.cons(getkey2244(x2252), x2252));
+                        var if_res972 = loop2250(M1.unsafe_fx_plus_(i2251, 1));
                     } else {
-                        var if_res1796 = M0.rvoid();
+                        var if_res972 = M0.rvoid();
                     }
-                    return if_res1796;
+                    return if_res972;
                 };
-                loop3220(0);
-                generic_sort_by_key3023(work_vec3219, less_than_p3211, n3216, M1.unsafe_car);
-                var loop3223 = function(i3224) {
+                loop2250(0);
+                generic_sort_by_key2053(work_vec2249, less_than_p2241, n2246, M1.unsafe_car);
+                var loop2253 = function(i2254) {
                     if (arguments.length !== 1) {
                         throw $rjs_core.racketContractError("arity mismatch");
                     } else {}
-                    if (M1.unsafe_fx_lt_(i3224, n3216) !== false) {
-                        M1.unsafe_vector_set_bang_(dst_vec3217, M1.unsafe_fx_plus_(i3224, dst_start3218), M1.unsafe_cdr(M1.unsafe_vector_ref(work_vec3219, i3224)));
-                        var if_res1797 = loop3223(M1.unsafe_fx_plus_(i3224, 1));
+                    if (M1.unsafe_fx_lt_(i2254, n2246) !== false) {
+                        M1.unsafe_vector_set_bang_(dst_vec2247, M1.unsafe_fx_plus_(i2254, dst_start2248), M1.unsafe_cdr(M1.unsafe_vector_ref(work_vec2249, i2254)));
+                        var if_res973 = loop2253(M1.unsafe_fx_plus_(i2254, 1));
                     } else {
-                        var if_res1797 = M0.rvoid();
+                        var if_res973 = M0.rvoid();
                     }
-                    return if_res1797;
+                    return if_res973;
                 };
-                var if_res1815 = loop3223(0);
+                var if_res991 = loop2253(0);
             } else {
-                var loop3225 = function(prev_val3226, next_index3227) {
+                var loop2255 = function(prev_val2256, next_index2257) {
                     if (arguments.length !== 2) {
                         throw $rjs_core.racketContractError("arity mismatch");
                     } else {}
-                    var or_part3228 = M1.unsafe_fx_eq_(next_index3227, end3213);
-                    if (or_part3228 !== false) {
-                        var if_res1800 = or_part3228;
+                    var or_part2258 = M1.unsafe_fx_eq_(next_index2257, end2243);
+                    if (or_part2258 !== false) {
+                        var if_res976 = or_part2258;
                     } else {
-                        var next_val3229 = M1.unsafe_vector_ref(vec3210, next_index3227);
-                        if (getkey3214 !== false) {
-                            var if_res1798 = less_than_p3211(getkey3214(next_val3229), getkey3214(prev_val3226));
+                        var next_val2259 = M1.unsafe_vector_ref(vec2240, next_index2257);
+                        if (getkey2244 !== false) {
+                            var if_res974 = less_than_p2241(getkey2244(next_val2259), getkey2244(prev_val2256));
                         } else {
-                            var if_res1798 = less_than_p3211(next_val3229, prev_val3226);
+                            var if_res974 = less_than_p2241(next_val2259, prev_val2256);
                         }
-                        if (M0.not(if_res1798) !== false) {
-                            var if_res1799 = loop3225(next_val3229, M1.unsafe_fx_plus_(next_index3227, 1));
+                        if (M0.not(if_res974) !== false) {
+                            var if_res975 = loop2255(next_val2259, M1.unsafe_fx_plus_(next_index2257, 1));
                         } else {
-                            var if_res1799 = false;
+                            var if_res975 = false;
                         }
-                        var if_res1800 = if_res1799;
+                        var if_res976 = if_res975;
                     }
-                    return if_res1800;
+                    return if_res976;
                 };
-                if (loop3225(M1.unsafe_vector_ref(vec3210, start3212), M1.unsafe_fx_plus_(start3212, 1)) !== false) {
+                if (loop2255(M1.unsafe_vector_ref(vec2240, start2242), M1.unsafe_fx_plus_(start2242, 1)) !== false) {
                     if (false !== false) {
-                        var if_res1801 = M0.vector_copy_bang_(dst_vec3217, dst_start3218, vec3210, start3212, end3213);
+                        var if_res977 = M0.vector_copy_bang_(dst_vec2247, dst_start2248, vec2240, start2242, end2243);
                     } else {
-                        var if_res1801 = M0.rvoid();
+                        var if_res977 = M0.rvoid();
                     }
-                    var if_res1814 = if_res1801;
+                    var if_res990 = if_res977;
                 } else {
-                    if (M1.unsafe_fx_lt__eq_(n3216, 3) !== false) {
+                    if (M1.unsafe_fx_lt__eq_(n2246, 3) !== false) {
                         if (false !== false) {
-                            var if_res1802 = M0.vector_copy_bang_(dst_vec3217, dst_start3218, vec3210, start3212, end3213);
+                            var if_res978 = M0.vector_copy_bang_(dst_vec2247, dst_start2248, vec2240, start2242, end2243);
                         } else {
-                            var if_res1802 = M0.rvoid();
+                            var if_res978 = M0.rvoid();
                         }
-                        if_res1802;
-                        if (M1.unsafe_fx_eq_(n3216, 1) !== false) {
-                            var if_res1812 = M0.rvoid();
+                        if_res978;
+                        if (M1.unsafe_fx_eq_(n2246, 1) !== false) {
+                            var if_res988 = M0.rvoid();
                         } else {
-                            if (M1.unsafe_fx_eq_(n3216, 2) !== false) {
-                                var tmp3230 = M1.unsafe_vector_ref(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 0));
-                                M1.unsafe_vector_set_bang_(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 0), M1.unsafe_vector_ref(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 1)));
-                                var if_res1811 = M1.unsafe_vector_set_bang_(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 1), tmp3230);
+                            if (M1.unsafe_fx_eq_(n2246, 2) !== false) {
+                                var tmp2260 = M1.unsafe_vector_ref(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 0));
+                                M1.unsafe_vector_set_bang_(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 0), M1.unsafe_vector_ref(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 1)));
+                                var if_res987 = M1.unsafe_vector_set_bang_(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 1), tmp2260);
                             } else {
-                                var a3231 = M1.unsafe_vector_ref(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 0));
-                                var b3232 = M1.unsafe_vector_ref(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 1));
-                                var c3233 = M1.unsafe_vector_ref(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 2));
-                                if (getkey3214 !== false) {
-                                    var if_res1803 = less_than_p3211(getkey3214(b3232), getkey3214(a3231));
+                                var a2261 = M1.unsafe_vector_ref(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 0));
+                                var b2262 = M1.unsafe_vector_ref(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 1));
+                                var c2263 = M1.unsafe_vector_ref(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 2));
+                                if (getkey2244 !== false) {
+                                    var if_res979 = less_than_p2241(getkey2244(b2262), getkey2244(a2261));
                                 } else {
-                                    var if_res1803 = less_than_p3211(b3232, a3231);
+                                    var if_res979 = less_than_p2241(b2262, a2261);
                                 }
-                                if (if_res1803 !== false) {
-                                    if (getkey3214 !== false) {
-                                        var if_res1804 = less_than_p3211(getkey3214(c3233), getkey3214(b3232));
+                                if (if_res979 !== false) {
+                                    if (getkey2244 !== false) {
+                                        var if_res980 = less_than_p2241(getkey2244(c2263), getkey2244(b2262));
                                     } else {
-                                        var if_res1804 = less_than_p3211(c3233, b3232);
+                                        var if_res980 = less_than_p2241(c2263, b2262);
                                     }
-                                    if (if_res1804 !== false) {
-                                        M1.unsafe_vector_set_bang_(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 0), c3233);
-                                        var if_res1807 = M1.unsafe_vector_set_bang_(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 2), a3231);
+                                    if (if_res980 !== false) {
+                                        M1.unsafe_vector_set_bang_(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 0), c2263);
+                                        var if_res983 = M1.unsafe_vector_set_bang_(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 2), a2261);
                                     } else {
-                                        if (getkey3214 !== false) {
-                                            var if_res1805 = less_than_p3211(getkey3214(c3233), getkey3214(a3231));
+                                        if (getkey2244 !== false) {
+                                            var if_res981 = less_than_p2241(getkey2244(c2263), getkey2244(a2261));
                                         } else {
-                                            var if_res1805 = less_than_p3211(c3233, a3231);
+                                            var if_res981 = less_than_p2241(c2263, a2261);
                                         }
-                                        if (if_res1805 !== false) {
-                                            M1.unsafe_vector_set_bang_(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 0), b3232);
-                                            M1.unsafe_vector_set_bang_(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 1), c3233);
-                                            var if_res1806 = M1.unsafe_vector_set_bang_(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 2), a3231);
+                                        if (if_res981 !== false) {
+                                            M1.unsafe_vector_set_bang_(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 0), b2262);
+                                            M1.unsafe_vector_set_bang_(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 1), c2263);
+                                            var if_res982 = M1.unsafe_vector_set_bang_(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 2), a2261);
                                         } else {
-                                            M1.unsafe_vector_set_bang_(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 0), b3232);
-                                            var if_res1806 = M1.unsafe_vector_set_bang_(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 1), a3231);
+                                            M1.unsafe_vector_set_bang_(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 0), b2262);
+                                            var if_res982 = M1.unsafe_vector_set_bang_(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 1), a2261);
                                         }
-                                        var if_res1807 = if_res1806;
+                                        var if_res983 = if_res982;
                                     }
-                                    var if_res1810 = if_res1807;
+                                    var if_res986 = if_res983;
                                 } else {
-                                    if (getkey3214 !== false) {
-                                        var if_res1808 = less_than_p3211(getkey3214(c3233), getkey3214(a3231));
+                                    if (getkey2244 !== false) {
+                                        var if_res984 = less_than_p2241(getkey2244(c2263), getkey2244(a2261));
                                     } else {
-                                        var if_res1808 = less_than_p3211(c3233, a3231);
+                                        var if_res984 = less_than_p2241(c2263, a2261);
                                     }
-                                    if (if_res1808 !== false) {
-                                        M1.unsafe_vector_set_bang_(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 0), c3233);
-                                        M1.unsafe_vector_set_bang_(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 1), a3231);
-                                        var if_res1809 = M1.unsafe_vector_set_bang_(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 2), b3232);
+                                    if (if_res984 !== false) {
+                                        M1.unsafe_vector_set_bang_(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 0), c2263);
+                                        M1.unsafe_vector_set_bang_(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 1), a2261);
+                                        var if_res985 = M1.unsafe_vector_set_bang_(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 2), b2262);
                                     } else {
-                                        M1.unsafe_vector_set_bang_(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 1), c3233);
-                                        var if_res1809 = M1.unsafe_vector_set_bang_(dst_vec3217, M1.unsafe_fx_plus_(dst_start3218, 2), b3232);
+                                        M1.unsafe_vector_set_bang_(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 1), c2263);
+                                        var if_res985 = M1.unsafe_vector_set_bang_(dst_vec2247, M1.unsafe_fx_plus_(dst_start2248, 2), b2262);
                                     }
-                                    var if_res1810 = if_res1809;
+                                    var if_res986 = if_res985;
                                 }
-                                var if_res1811 = if_res1810;
+                                var if_res987 = if_res986;
                             }
-                            var if_res1812 = if_res1811;
+                            var if_res988 = if_res987;
                         }
-                        var if_res1813 = if_res1812;
+                        var if_res989 = if_res988;
                     } else {
-                        var work_vec3234 = M0.make_vector(n3216 + M0.ceiling(n3216 / 2), false);
-                        M0.vector_copy_bang_(work_vec3234, 0, vec3210, start3212, end3213);
-                        generic_sort_by_key3023(work_vec3234, less_than_p3211, n3216, getkey3214);
-                        var if_res1813 = M0.vector_copy_bang_(dst_vec3217, dst_start3218, work_vec3234, 0, n3216);
+                        var work_vec2264 = M0.make_vector(n2246 + M0.ceiling(n2246 / 2), false);
+                        M0.vector_copy_bang_(work_vec2264, 0, vec2240, start2242, end2243);
+                        generic_sort_by_key2053(work_vec2264, less_than_p2241, n2246, getkey2244);
+                        var if_res989 = M0.vector_copy_bang_(dst_vec2247, dst_start2248, work_vec2264, 0, n2246);
                     }
-                    var if_res1814 = if_res1813;
+                    var if_res990 = if_res989;
                 }
-                var if_res1815 = if_res1814;
+                var if_res991 = if_res990;
             }
-            var if_res1816 = if_res1815;
+            var if_res992 = if_res991;
         }
-        if_res1816;
+        if_res992;
         if (false !== false) {
-            var if_res1817 = dst_vec3217;
+            var if_res993 = dst_vec2247;
         } else {
-            var if_res1817 = M0.rvoid();
+            var if_res993 = M0.rvoid();
         }
-        var if_res1818 = if_res1817;
+        var if_res994 = if_res993;
     } else {
-        var if_res1818 = vector_sort_bang_(vec3210, less_than_p3211, start3212, end3213);
+        var if_res994 = vector_sort_bang_(vec2240, less_than_p2241, start2242, end2243);
     }
-    return if_res1818;
+    return if_res994;
 };
-var let_result1924 = M0.values(temp1923, temp1872, $rjs_core.attachProcedureArity(function() {
-    var fixed_lam1768 = {
-        '4': cl1766,
-        '6': cl1767
+var let_result1100 = M0.values(temp1099, temp1048, $rjs_core.attachProcedureArity(function() {
+    var fixed_lam944 = {
+        '4': cl942,
+        '6': cl943
     } [arguments.length];
-    if (fixed_lam1768 !== undefined) {
-        return fixed_lam1768.apply(null, arguments);
+    if (fixed_lam944 !== undefined) {
+        return fixed_lam944.apply(null, arguments);
     } else {
         return M0.error($rjs_core.UString.make("case-lambda: invalid case"));
     }
 }, [4, 6]));
-var sort = let_result1924.getAt(0);
-var vector_sort = let_result1924.getAt(1);
-var vector_sort_bang_ = let_result1924.getAt(2);
+var sort = let_result1100.getAt(0);
+var vector_sort = let_result1100.getAt(1);
+var vector_sort_bang_ = let_result1100.getAt(2);
 var __rjs_quoted__ = {};
 export {
     __rjs_quoted__,

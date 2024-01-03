@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cp -r ../racketscript-universe/js-build/ .
+
+exit 0

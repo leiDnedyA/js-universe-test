@@ -3,5 +3,5 @@
 rm -rf js-build
 rm -rf ../racketscript-universe/js-build/
 
-gnome-terminal -- bash -c "cd ../racketscript-universe/; bash js_compile.sh; cp -r js-build ../js-universe-test"
+gnome-terminal -- bash -c "cd ../racketscript-universe/; rm -rf js-build; bash js_compile.sh; cp -r js-build ../js-universe-test"
 
