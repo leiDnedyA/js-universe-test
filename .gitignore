@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # symlink to library
-js-build/
+js-build

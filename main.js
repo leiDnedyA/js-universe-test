@@ -1,14 +1,25 @@
-import { big_bang, to_draw, text, rkt_list} from "./js-build/modules/universe.rkt.js";
+import { bigBang, toDraw, onTick, text } from "./js-build/modules/js-wrapper.rkt.js";
 
-console.log(text)
+const INIT_STATE = 100;
+const MAX_TEXT_SIZE = 100;
+const MIN_TEXT_SIZE = 50;
 
-const init = () => {
-
-}
-
-const handleDraw = to_draw(()=>{
-  return text("hello world", 100, "black");
+const draw = toDraw((ws) => {
+  return text("Hello, world!", Math.abs(ws), "black");
 });
 
+const tick = onTick((ws) => {
+  if (ws > 0) {
+    if (ws >= MAX_TEXT_SIZE) {
+      return -(ws - 1);
+    }
+    return ws + 1;
+  } else {
+    if (-ws <= MIN_TEXT_SIZE) {
+      return -ws + 1;
+    }
+    return ws + 1;
+  }
+}, .01);
 
-big_bang(document.querySelector('#root'), 10, rkt_list(handleDraw));
+bigBang(INIT_STATE, [draw, tick]);
