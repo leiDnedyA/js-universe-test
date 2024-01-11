@@ -2,21 +2,13 @@ import {
   bigBang,
   toDraw,
   onTick,
+  onMouse,
+  onKey,
+  stopWhen,
   text,
   emptyScene,
-  rectangle,
-  frame,
-  placeImagesAlign,
-  posn,
-  posnX,
   overlayXY,
-  underlayXY,
-  overlay,
-  underlay,
-  aboveAlign,
-  above,
   besideAlign,
-  beside
 } from "./js-build/modules/js-wrapper.rkt.js";
 
 const INIT_STATE = 100;
@@ -31,13 +23,6 @@ const draw = toDraw((ws) => {
     emptyScene(500, 500, "gray")
     ]
   )
-  // return overlayXY(
-  //   text("Hello, world!", Math.abs(ws), "black"),
-  //   30,
-  //   30,
-  //   emptyScene(500, 500, "gray"),
-  // );
-  // return overlayAlign("center", "top", [text("Hello, world!", Math.abs(ws), "black"), rectangle(20, 20, "solid", "red"), emptyScene(500, 500, "gray")]);
 });
 
 const tick = onTick((ws) => {
@@ -54,4 +39,8 @@ const tick = onTick((ws) => {
   }
 }, 0.01);
 
-bigBang(INIT_STATE, [draw, tick]);
+const handleKey = onKey((ws, key) => key === "s" ? "stop" : ws )
+
+const stop = stopWhen((ws) => ws === "stop");
+
+bigBang(INIT_STATE, [draw, tick, handleKey]);
